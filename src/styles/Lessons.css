@@ -4,6 +4,11 @@
   flex-direction: column;
 }
 
+.back {
+  display: flex;
+  color: black;
+}
+
 .forms {
   list-style-type: none;
 }
