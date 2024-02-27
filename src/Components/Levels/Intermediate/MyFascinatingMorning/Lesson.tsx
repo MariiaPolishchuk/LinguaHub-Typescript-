@@ -24,23 +24,24 @@ const Lesson: React.FC = () => {
         <div className="overall fade-in main-container-lessons">
             
             <ReadingText />
-            <Button
+            <div className="choose-buttons"><Button
                 className="lesson-button"
                 variant="contained"
                 onClick={toggleModal}
             >
                 Tick here to speak
             </Button>
-
+ </div>
             {isModalOpen && (
                 <div className="modal-container ">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <Button onClick={toggleModal}>Close</Button>
+                            {/* <Button onClick={toggleModal}>Close</Button> */}
                         </div>
                         <div className="modal-body">
                             {outputText && <p>{outputText}</p>}
-                            <Button onClick={nextQuestion}>Next Question</Button> 
+                           <div><Button onClick={nextQuestion}>Next Question</Button> 
+                           <Button onClick={toggleModal}>Close</Button></div>
                         </div>
                     </div>
                 </div>

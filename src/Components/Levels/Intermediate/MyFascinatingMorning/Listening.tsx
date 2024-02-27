@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import MyFascinatingMorningAudio from "./MyFascinatingMorningAudio";
 
 
 
 const Listening = () => {
   return (
     <div>
-      {/* Ваш код компонента Listening здесь */}
+     <MyFascinatingMorningAudio />
     </div>
   );
 };

@@ -291,6 +291,7 @@
 .quiz-text {
   text-align: justify;
   max-width: 850px;
+  line-height: 1.2 !important;
 }
 
 .drag-container {
@@ -305,14 +306,35 @@
   padding: 2px !important;
 }
 
-.blank-space {
+/* .blank-space {
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
     0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12) !important;
   background-color: #93c6c947 !important;
   font-weight: 600;
   color: #1d5b5b;
   margin: 3px 0;
+} */
+
+.blank-space {
+  display: inline-block;
+  min-width: 50px; /* Задайте желаемую ширину пропуска */
+  height: 15px; /* Задайте желаемую высоту пропуска */
+  background-color: #f0f0f0; /* Цвет фона для пропуска */
+  border: 1px solid #ccc; /* Рамка для пропуска */
+  margin: 0 5px; /* Отступы между пропусками */
+  vertical-align: middle; /* Выравнивание пропусков по вертикали */
+  text-align: center;
 }
+
+.answer {
+  display: inline-block;
+  margin: 5px; /* Расстояние сверху и снизу пропуска */
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+
+}
+
 
 .drag-item {
   padding: 5px 10px;
@@ -332,6 +354,35 @@
   padding: 6px 10px;
   color: #fafafa;
 }
+
+
+/* listening */
+
+/* .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  width: 400px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
 
 @media only screen and (max-width: 1200px) {
   .quiz-container ul {
