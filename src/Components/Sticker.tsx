@@ -57,7 +57,7 @@ const Sticker: React.FC = () => {
   const [showTerms, setShowTerms] = useState(false);
 
   const checkScreenWidth = () => {
-    setIsSmallScreen(window.innerWidth <= 768);
+    setIsSmallScreen(window.innerWidth <= 926);
   };
 
   useEffect(() => {

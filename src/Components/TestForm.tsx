@@ -37,25 +37,29 @@ const TestForm: React.FC<TestFormProps> = ({ questionsAndAnswers }) => {
         knowledge to your mind! Choose the correct word for each definition and
         check your answers!
       </h4>
-      <ol>
+      <ol className="forms">
         {questionsAndAnswers.map((questionData, index) => (
           <li key={index}>
+            <div>
             <p>{questionData.question}</p>
-            <select
+            <select className="select-opt"
               value={answers[index]}
               onChange={(e) => {
                 const newAnswers = [...answers];
                 newAnswers[index] = e.target.value;
                 setAnswers(newAnswers);
               }}
+              
             >
-              <option value="">Select an option</option>
+              
+              <option  value="">Select an option</option>
               {questionData.options.map((option, optionIndex) => (
                 <option key={optionIndex} value={option}>
                   {option}
                 </option>
               ))}
             </select>
+            </div>
             {results[index] !== null && (
               <p>
                 {results[index]

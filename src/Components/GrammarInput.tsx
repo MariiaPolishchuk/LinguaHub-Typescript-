@@ -87,7 +87,7 @@ const GrammarInput: React.FC<Props> = ({ game }) => {
         <h4>Write the correct form of the verbs in brackets and check your answers! Don't forget this topic refers to the Present Tenses! So use the Present Simple, Continuous, Perfect and Perfect-Continuous!</h4>
       </div>
       <div className='list'>
-        <List className="quiz-list">
+        <ol className="quiz-list forms">
           {game.sentences.map((sentence, index) => (
             <ListItem key={sentence.id}>
               {sentence.text.split(/\(([^)]+)\)/).map((part, partIndex) => (
@@ -104,7 +104,7 @@ const GrammarInput: React.FC<Props> = ({ game }) => {
               ))}
             </ListItem>
           ))}
-        </List>
+        </ol>
       </div>
       <div className="choose-buttons">
         <Button className='lesson-button' variant="contained" onClick={submitAnswers}>Check</Button>

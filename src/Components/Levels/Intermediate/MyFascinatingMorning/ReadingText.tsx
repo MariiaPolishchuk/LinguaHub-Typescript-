@@ -1,6 +1,7 @@
 import React from "react";
 import Zoom from "@mui/material/Zoom";
-import CustomTooltip from "../../../CustomTooltip"; // Предположим, что Tooltip импортируется отдельно
+import CustomTooltip from "../../../CustomTooltip"; 
+import "../../../../styles/ReadingText.css";
 
 const ReadingText = () => {
   return (
