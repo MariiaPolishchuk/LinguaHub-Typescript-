@@ -1,53 +1,48 @@
 
 import React, { useState } from "react";
-import Button from "@mui/material/Button";
-import ReadingText from "./ReadingText";
-import useRandomQuestion from "../../../UseRandomQuestions";
+import { Tabs, Tab, Button } from "@material-ui/core";
+import { Link } from "react-router-dom"; 
+import Test from "./Test";
+import Grammar from "./Grammar";
+import Listening from "./Listening";
 import "../../../../styles/Lessons.css";
+import ReadingText from "./ReadingText";
 
 const Lesson: React.FC = () => {
-    const { outputText, askRandomQuestion } = useRandomQuestion();
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [, setQuestionIndex] = useState(0); 
+    const [value, setValue] = useState(0); 
 
-    const toggleModal = () => {
-        setIsModalOpen(!isModalOpen);
-        askRandomQuestion();
-    };
-
-    const nextQuestion = () => {
-        setQuestionIndex((prevIndex) => (prevIndex + 1) % askRandomQuestion.length); 
-        askRandomQuestion();
+    const handleChange = (_event: React.ChangeEvent<{}>, newValue: number) => {
+        setValue(newValue);
     };
 
     return (
         <div className="overall fade-in main-container-lessons">
-            
-            <ReadingText />
-            <div className="choose-buttons"><Button
-                className="lesson-button"
-                variant="contained"
-                onClick={toggleModal}
+
+            <Link to="/course/intermediate">Назад</Link>
+
+    
+            <Tabs
+                className="lesson-tabs"
+                value={value}
+                onChange={handleChange}
+                indicatorColor="primary"
+                textColor="primary"
+                centered
             >
-                Tick here to speak
-            </Button>
- </div>
-            {isModalOpen && (
-                <div className="modal-container ">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            {/* <Button onClick={toggleModal}>Close</Button> */}
-                        </div>
-                        <div className="modal-body">
-                            {outputText && <p>{outputText}</p>}
-                           <div><Button onClick={nextQuestion}>Next Question</Button> 
-                           <Button onClick={toggleModal}>Close</Button></div>
-                        </div>
-                    </div>
-                </div>
-            )}
+                <Tab label="Reading" />
+                <Tab label="Test" />
+                <Tab label="Grammar" />
+                <Tab label="Listening" />
+            </Tabs>
+
+    
+            {value === 0 && <ReadingText />}
+            {value === 1 && <Test />}
+            {value === 2 && <Grammar />}
+            {value === 3 && <Listening />}
         </div>
     );
 };
 
 export default Lesson;
+

@@ -41,38 +41,60 @@ const TestForm: React.FC<TestFormProps> = ({ questionsAndAnswers }) => {
         {questionsAndAnswers.map((questionData, index) => (
           <li key={index}>
             <div>
-            <p>{questionData.question}</p>
-            <select className="select-opt"
-              value={answers[index]}
-              onChange={(e) => {
-                const newAnswers = [...answers];
-                newAnswers[index] = e.target.value;
-                setAnswers(newAnswers);
-              }}
-              
-            >
-              
-              <option  value="">Select an option</option>
-              {questionData.options.map((option, optionIndex) => (
-                <option key={optionIndex} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-            </div>
-            {results[index] !== null && (
+              <p>{questionData.question}</p>
+              <select
+                className="select-opt"
+                value={answers[index]}
+                onChange={(e) => {
+                  const newAnswers = [...answers];
+                  newAnswers[index] = e.target.value;
+                  setAnswers(newAnswers);
+                }}
+              >
+                <option value="">Select an option</option>
+                {questionData.options.map((option, optionIndex) => (
+                  <option key={optionIndex} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+              {results[index] !== null && (
+              <div>
               <p>
                 {results[index]
                   ? "Correct"
                   : `Incorrect. Correct is ${questionsAndAnswers[index].correctAnswer}`}
               </p>
+              </div>
             )}
+            </div>
+            {/* {results[index] !== null && (
+              <div>
+              <p>
+                {results[index]
+                  ? "Correct"
+                  : `Incorrect. Correct is ${questionsAndAnswers[index].correctAnswer}`}
+              </p>
+              </div>
+            )} */}
           </li>
         ))}
       </ol>
 
-      <Button onClick={checkAnswers}>Check Answers</Button>
-      <Button onClick={resetAnswers}>Start again</Button>
+      <Button
+        className="lesson-button"
+        variant="contained"
+        onClick={checkAnswers}
+      >
+        Check Answers
+      </Button>
+      <Button
+        className="lesson-button"
+        variant="contained"
+        onClick={resetAnswers}
+      >
+        Start again
+      </Button>
     </div>
   );
 };

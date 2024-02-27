@@ -1,6 +1,26 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { Button, ListItem, List } from '@mui/material';
 import { WordsGame } from '../Components/Levels/Intermediate/MyFascinatingMorning/GrammarMFM';
+import styled from 'styled-components';
+
+const StyledInput = styled.input`
+  border: 1px solid #ccc;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-top: 10px;
+  width: auto; /* Устанавливаем автоматическую ширину */
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+const StyledListItem = styled(ListItem)`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 interface Props {
   game: WordsGame;
@@ -8,6 +28,24 @@ interface Props {
 
 const GrammarInput: React.FC<Props> = ({ game }) => {
   const [answersShown, setAnswersShown] = useState(false);
+
+  useEffect(() => {
+    const updateInputWidth = (event: Event) => {
+      const input = event.target as HTMLInputElement;
+      input.style.width = `${(input.value.length + 1) * 8}px`; 
+    };
+
+    const inputs = document.querySelectorAll('.word');
+    inputs.forEach((input) => {
+      input.addEventListener('input', updateInputWidth);
+    });
+
+    return () => {
+      inputs.forEach((input) => {
+        input.removeEventListener('input', updateInputWidth);
+      });
+    };
+  }, []);
 
   const checkAnswer = (wordId: string, correctAnswers: string[]) => {
     const userAnswer = (document.getElementById(wordId) as HTMLInputElement).value.trim().toLowerCase();
@@ -64,7 +102,6 @@ const GrammarInput: React.FC<Props> = ({ game }) => {
       });
     });
   };
-  
 
   const submitAnswers = () => {
     game.sentences.forEach((sentence, index) => {
@@ -78,7 +115,6 @@ const GrammarInput: React.FC<Props> = ({ game }) => {
       });
     });
   };
-  
 
   return (
     <div className="quiz block" id="quiz">
@@ -86,26 +122,23 @@ const GrammarInput: React.FC<Props> = ({ game }) => {
         <h3>Grammar Practice</h3>
         <h4>Write the correct form of the verbs in brackets and check your answers! Don't forget this topic refers to the Present Tenses! So use the Present Simple, Continuous, Perfect and Perfect-Continuous!</h4>
       </div>
-      <div className='list'>
-        <ol className="quiz-list forms">
-          {game.sentences.map((sentence, index) => (
-            <ListItem key={sentence.id}>
-              {sentence.text.split(/\(([^)]+)\)/).map((part, partIndex) => (
-                partIndex % 2 === 0 ? (
-                  <span key={partIndex}>{part}</span>
-                ) : (
-                  <input
-                    id={`word${index + 1}-${partIndex}-answer`}
-                    className="word"
-                    key={partIndex}
-                    style={{ backgroundColor: 'white', padding: '2px' }}
-                  />
-                )
-              ))}
-            </ListItem>
-          ))}
-        </ol>
-      </div>
+      <List className='quiz-list forms'>
+        {game.sentences.map((sentence, index) => (
+          <StyledListItem className='quiz-li' key={sentence.id}>
+            {sentence.text.split(/\(([^)]+)\)/).map((part, partIndex) => (
+              partIndex % 2 === 0 ? (
+                <span key={partIndex}>{part}</span>
+              ) : (
+                <StyledInput
+                  id={`word${index + 1}-${partIndex}-answer`}
+                  className="word"
+                  key={partIndex}
+                />
+              )
+            ))}
+          </StyledListItem>
+        ))}
+      </List>
       <div className="choose-buttons">
         <Button className='lesson-button' variant="contained" onClick={submitAnswers}>Check</Button>
         <Button className='lesson-button' variant="contained" onClick={resetForm}>Start again</Button>

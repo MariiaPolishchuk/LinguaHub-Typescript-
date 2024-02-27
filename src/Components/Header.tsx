@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({
           {" "}
           <img
             className="logo-icon"
-            src="src/assets/images/icons/LINGUA-logo.png"
+            src="src/assets/images/icons/logo-LINGUApro.png"
             alt="Logo"
           />
           {" "}

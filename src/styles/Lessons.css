@@ -36,7 +36,8 @@
 .forms li {
   display: flex;
   align-items: baseline;
-  gap: 20px;
+  gap: 10px;
+  justify-content: flex-start;
 }
 
 .lesson-name {
@@ -125,14 +126,25 @@
 
 /* input */
 
+.quiz-list {
+  padding: 0 !important;
+}
+
 .word {
-  padding: 5px;
   border: 1px solid;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 1px !important;
+ 
 }
 
 .lesson-block {
   display: flex;
   gap: 75px;
+}
+
+.quiz-li {
+  margin-bottom: 15px;
 }
 /* sticker */
 
@@ -332,9 +344,7 @@
   padding: 5px 10px;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
-
 }
-
 
 .drag-item {
   padding: 5px 10px;
@@ -354,7 +364,6 @@
   padding: 6px 10px;
   color: #fafafa;
 }
-
 
 /* listening */
 
@@ -383,10 +392,9 @@
   border-radius: 8px;
 }
 
-
 @media only screen and (max-width: 1200px) {
   .quiz-container ul {
-    max-height: 735px;
+    max-height: 700px;
     overflow-y: auto;
   }
 }
@@ -464,6 +472,9 @@
     color: #ffffff;
     font-size: small;
     font-weight: 700;
+  }
+  .word {
+    margin-top: 10px;
   }
 }
 

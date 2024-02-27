@@ -1,52 +1,50 @@
-
 import React, { useState } from "react";
-import { useNavigate, Routes, Route } from "react-router-dom";
-import { Tabs, Tab } from "@material-ui/core";
-import Lesson from "./Lesson";
-import Test from "./Test"; 
+import { Routes, Route, useNavigate } from "react-router-dom";
+import Test from "./Test";
 import Grammar from "./Grammar";
 import Listening from "./Listening";
+import "../../../../styles/Lessons.css";
+import Lesson from "./Lesson";
+import { Button } from "@material-ui/core";
+
 
 const MyFascinatingMorning: React.FC = () => {
   const navigate = useNavigate();
-  const [value, setValue] = useState<number | null>(null); //  null, чтобы показать, что выбор еще не сделан
+  const [showStartButton, setShowStartButton] = useState(true);
+  const [] = useState(0);
 
-  const handleChange = (newValue: number) => {
-    setValue(newValue);
-    if (newValue === 0) {
-      navigate("lesson");
-    } else if (newValue === 1) {
-      navigate("test");
-    } else if (newValue === 2) {
-      navigate("grammar");
-    } else {
-      navigate("listening");
-    }
+
+  const handleStart = () => {
+    setShowStartButton(false);
+    navigate("/course/intermediate/myfascinatingmorning/lesson"); 
   };
 
   return (
     <div className="main-container-lessons">
       <h2 className="lesson-name">MyFascinatingMorning</h2>
-      <Tabs
-        className="lesson-tabs"
-        value={value !== null ? value : false}
-        onChange={(event, newValue) => handleChange(newValue)}
-        indicatorColor="primary"
-        textColor="primary"
-        centered
-      >
-        <Tab label="Reading" />
-        <Tab label="Vocabulary Practise" />
-        <Tab label="Grammar Practise" />
-        <Tab label="Listening" />
-      </Tabs>
-      
-      <Routes>
-        <Route path="/lesson" element={<Lesson />} />
-        <Route path="/test" element={<Test />} />
-        <Route path="/grammar" element={<Grammar />} />
-        <Route path="/listening" element={<Listening />} />
-      </Routes>
+     
+      {showStartButton && (
+        <div>
+          <p>Описание темы здесь</p>
+          <Button
+            className="lesson-button"
+            variant="contained"
+            onClick={handleStart}
+          >
+            Start 
+          </Button>
+        </div>
+      )}
+      {!showStartButton && (
+        <>
+          <Routes>
+            <Route path="/lesson" element={<Lesson />} />
+            <Route path="/test" element={<Test />} />
+            <Route path="/grammar" element={<Grammar />} />
+            <Route path="/listening" element={<Listening />} />
+          </Routes>
+        </>
+      )}
     </div>
   );
 };
