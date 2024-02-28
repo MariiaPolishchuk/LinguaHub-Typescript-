@@ -6,7 +6,9 @@ import { synonyms, words } from "./SynonymsData";
 import VocabularyPractice from "../../../VocabularyPractise";
 import vocabularyData from "./data";
 import Sticker from "../../../Sticker";
-import TermList from "./TermList";
+import terms from "./TermListData";
+
+
 
 const Test: React.FC = () => {
   const questionsAndAnswers = [
@@ -93,9 +95,7 @@ const Test: React.FC = () => {
     <div>
       <div className="lesson-block">
         <div className="sticker-container">
-          <Sticker>
-            <TermList />
-          </Sticker>
+          <Sticker terms={terms} />
         </div>
         <div className="blocks">
           <TestForm questionsAndAnswers={questionsAndAnswers} />

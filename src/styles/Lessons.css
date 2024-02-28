@@ -3,7 +3,7 @@
   flex-direction: column;
 }
 .main-container-lessons {
-  padding: 0 20px;
+  padding: 0 40px;
   display: flex;
   flex-direction: column;
 }
@@ -113,7 +113,7 @@
   gap: 10px;
   align-items: center;
   position: relative;
-  margin-left: 275px;
+  margin-left: 150px;
 }
 
 /* button:focus-within {
@@ -196,7 +196,13 @@ button:active {
 }
 /* sticker */
 
+
 .sticker-container {
+ display: flex;
+ width: unset;
+}
+
+.sticker-container.showing-terms {
   display: flex;
   position: fixed;
   left: 0;
@@ -205,6 +211,17 @@ button:active {
   max-width: 256px;
   border-radius: 8px;
 }
+
+
+/* .sticker-container {
+  display: flex;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 0px;
+  max-width: 256px;
+  border-radius: 8px;
+} */
 
 .tooltip-lesson {
   padding: 20px 25px;
@@ -464,7 +481,7 @@ button:active {
   }
 
   .blocks {
-    margin-left: 0;
+    margin-left: 0 !important;
   }
 
   .main-container-lessons {

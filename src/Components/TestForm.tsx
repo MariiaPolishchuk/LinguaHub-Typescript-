@@ -68,15 +68,6 @@ const TestForm: React.FC<TestFormProps> = ({ questionsAndAnswers }) => {
               </div>
             )}
             </div>
-            {/* {results[index] !== null && (
-              <div>
-              <p>
-                {results[index]
-                  ? "Correct"
-                  : `Incorrect. Correct is ${questionsAndAnswers[index].correctAnswer}`}
-              </p>
-              </div>
-            )} */}
           </li>
         ))}
       </ol>

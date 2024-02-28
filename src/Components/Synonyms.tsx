@@ -1,12 +1,10 @@
-
 import React, { useState, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Button from "@mui/material/Button";
-import { Word, Synonym } from "../Components/Levels/Intermediate/MyFascinatingMorning/SynonymsData";
 
 interface Props {
-  words: Word[];
-  synonyms: Synonym[];
+  words: { id: string; text: string }[];
+  synonyms: { id: string; text: string }[];
 }
 
 const Synonyms: React.FC<Props> = ({ words, synonyms }) => {
@@ -153,5 +151,6 @@ const Synonyms: React.FC<Props> = ({ words, synonyms }) => {
 };
 
 export default Synonyms;
+
 
 
