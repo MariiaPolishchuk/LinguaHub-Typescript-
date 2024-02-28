@@ -93,6 +93,7 @@
 // export default Lesson;
 
 
+// Lesson.js
 import React, { useState, useEffect, useRef } from "react";
 import { Tabs, Tab, Button } from "@material-ui/core";
 import ReadingText from "./ReadingText";
@@ -100,6 +101,7 @@ import Test from "./Test";
 import Grammar from "./Grammar";
 import Listening from "./Listening";
 import useRandomQuestion from "../../../UseRandomQuestions";
+import RandomQuestions from "./RandomQuestions"; // Импортируем массив с вопросами
 
 const Lesson: React.FC = () => {
   const {
@@ -112,7 +114,7 @@ const Lesson: React.FC = () => {
     askRandomQuestion: () => void;
     isModalOpen: boolean;
     toggleModal: () => void;
-  } = useRandomQuestion();
+  } = useRandomQuestion(RandomQuestions); // Передаем массив вопросов как аргумент хука
 
   const [value, setValue] = useState(0);
   const modalRef = useRef<HTMLDivElement>(null); // Создаем ref
@@ -127,7 +129,6 @@ const Lesson: React.FC = () => {
     }
   }, [isModalOpen]);
   
-
   return (
     <div className="overall fade-in main-container-lessons" ref={modalRef}> {/* Передаем ref */}
       {/* <Link className="back-link" to="/course/intermediate">
