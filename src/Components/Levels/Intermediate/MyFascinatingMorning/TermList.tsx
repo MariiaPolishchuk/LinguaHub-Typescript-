@@ -1,4 +1,5 @@
-import React from "react";
+
+import React, { forwardRef } from "react";
 import { Tooltip } from "@material-ui/core";
 
 interface Term {
@@ -48,11 +49,11 @@ const terms: Term[] = [
   { word: "Set forth", description: "To explain or present something in detail" },
 ];
 
-const TermList: React.FC = () => {
+const TermList: React.ForwardRefRenderFunction<HTMLDivElement> = (props, ref) => {
   return (
     <>
       {terms.map((term, index) => (
-        <div key={index}>
+        <div key={index} ref={ref}>
           <Tooltip title={term.description}>
             <span>{term.word}</span>
           </Tooltip>
@@ -63,4 +64,4 @@ const TermList: React.FC = () => {
   );
 };
 
-export default TermList;
+export default forwardRef(TermList);

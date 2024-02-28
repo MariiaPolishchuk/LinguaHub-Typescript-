@@ -188,7 +188,7 @@ const AudioComponent: React.FC<AudioProps> = ({ audioFile, questions }) => {
           <source src={audioFile} type="audio/mp3" />
           Your browser does not support the audio element.
         </audio>
-        <Modal className="modal-container" open={modalOpen} onClose={() => setModalOpen(false)}>
+        <Modal className="modal-container fade-in-fast" open={modalOpen} onClose={() => setModalOpen(false)}>
           <div className="modal-content">
             {audioQuestionObj && (
               <Box className="modal-body audio-questions" id="question">

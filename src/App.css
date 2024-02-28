@@ -83,6 +83,22 @@ body {
   }
 }
 
+.fade-in-fast {
+  opacity: 0;
+  animation: fadeIn ease-in-out 1;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /* .choose-buttons {
   gap: 25px;
   padding: 40px;
@@ -91,6 +107,7 @@ body {
 .lesson-button {
   background-color: #1997a8 !important;
   margin: 20px !important;
+  color: white !important;
 }
 
 .text {

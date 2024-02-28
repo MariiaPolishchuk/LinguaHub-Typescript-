@@ -1,9 +1,12 @@
-import React from "react";
-import Zoom from "@mui/material/Zoom";
-import CustomTooltip from "../../../CustomTooltip"; 
-import "../../../../styles/ReadingText.css";
+
+import React, { useRef } from "react";
+import Zoom, { ZoomProps } from "@mui/material/Zoom";
+import { TransitionProps } from "@mui/material/transitions";
+import CustomTooltip from "../../../CustomTooltip";
 
 const ReadingText = () => {
+  const hustleRef = useRef(null); 
+
   return (
     <div className="reading">
       <h4>
@@ -16,17 +19,17 @@ const ReadingText = () => {
         <CustomTooltip
           title="busy and noisy activity"
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
-          <span> hustle and bustle </span>
+          <span ref={hustleRef}> hustle and bustle </span>
         </CustomTooltip>
         of daily life, routines often provide the comforting rhythm that guides
         our days. While routines are commonly associated with the{" "}
         <CustomTooltip
           title="routine; lacking interest or excitement"
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> mundane </span>
@@ -36,7 +39,7 @@ const ReadingText = () => {
         <CustomTooltip
           title="to make a careful or detailed search for information"
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> delves into </span>
@@ -45,7 +48,7 @@ const ReadingText = () => {
         <CustomTooltip
           title="details"
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> intricacies </span>
@@ -55,7 +58,7 @@ const ReadingText = () => {
         <CustomTooltip
           title="absolutely necessary; extremely important."
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> essential </span>
@@ -64,7 +67,7 @@ const ReadingText = () => {
         <CustomTooltip
           title="arousing one's curiosity or interest; fascinating."
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> intriguing </span>
@@ -79,7 +82,7 @@ const ReadingText = () => {
         <CustomTooltip
           title="to establish a particular mood or character for the next days"
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> setting the tone for the day ahead </span>
@@ -88,7 +91,7 @@ const ReadingText = () => {
         <CustomTooltip
           title="making one feel strong, healthy, and full of energy"
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> invigorating </span>
@@ -100,7 +103,7 @@ const ReadingText = () => {
         <CustomTooltip
           title="to drink in small quantities or little by little"
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> sipping on </span>
@@ -109,7 +112,7 @@ const ReadingText = () => {
         <CustomTooltip
           title="in a way that shows great attention to detail; very thoroughly."
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> meticulously </span>
@@ -118,7 +121,7 @@ const ReadingText = () => {
         <CustomTooltip
           title="taste (good food, drink or moment) and enjoy it to the full"
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> savoring </span>
@@ -128,7 +131,7 @@ const ReadingText = () => {
         <CustomTooltip
           title="fill; pervade"
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> infuse </span>
@@ -138,7 +141,7 @@ const ReadingText = () => {
         <CustomTooltip
           title="creating"
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> crafting </span>
@@ -147,7 +150,7 @@ const ReadingText = () => {
         <CustomTooltip
           title="try to acquire or develop (a quality or skill)."
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> cultivate </span>
@@ -156,16 +159,14 @@ const ReadingText = () => {
         <CustomTooltip
           title="done on purpose; deliberate; consciously"
           placement="top"
-          TransitionComponent={Zoom}
+          TransitionComponent={Zoom as React.ComponentType<TransitionProps> | undefined}
           arrow
         >
           <span> intentional </span>
         </CustomTooltip>
         life.
       </p>
-
     </div>
-    
   );
 };
 

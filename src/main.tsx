@@ -43,15 +43,14 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux"; // Импорт Provider из React Redux
+import { Provider } from "react-redux"; 
 import { BrowserRouter as Router } from "react-router-dom";
-import store from "./store"; // Импорт объекта store
+import store from "./store"; 
 
-import App from "./App"; // Путь к вашему корневому компоненту
+import App from "./App"; 
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* Обертка корневого компонента в Provider и передача store */}
     <Provider store={store}>
       <Router>
         <div className="main-container">

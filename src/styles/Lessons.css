@@ -4,9 +4,39 @@
   flex-direction: column;
 }
 
-.back {
+.start-lesson {
   display: flex;
-  color: black;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.test-form .start-lesson {
+  margin-left: 275px !important;
+}
+
+.back-link {
+  display: flex;
+  color: #3da9ba;
+  font-size: larger;
+  padding: 0 20px;
+}
+
+.lesson-wrapper {
+  display: flex;
+  height: 3px;
+  background: radial-gradient(
+    circle farthest-corner at 100px 50px,
+    #c6eaee,
+    #34a6b7
+  );
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+  align-items: flex-end;
+  flex-direction: column;
+  margin-left: auto;
 }
 
 .forms {
@@ -69,6 +99,8 @@
 
 .reading {
   text-align: justify;
+  line-height: 1.5;
+  max-width: 800px;
 }
 
 .blocks {
@@ -79,6 +111,15 @@
   position: relative;
   margin-left: 275px;
 }
+
+/* button:focus-within {
+  color: rgb(29, 144, 144) !important;
+
+}
+
+button:active {
+  color: rgb(29, 144, 144) !important;
+} */
 
 /* random */
 
@@ -116,7 +157,6 @@
 
 /* Тело модального окна */
 .modal-body {
-  margin-top: 10px;
   color: black;
 }
 
@@ -140,7 +180,6 @@
   border: 1px solid;
   border-radius: 4px;
   padding: 1px !important;
- 
 }
 
 .lesson-block {
@@ -167,7 +206,7 @@
   padding: 20px 25px;
   box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
     0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
-  background-color: rgb(127 190 193 / 83%);
+  background-color: rgb(127, 190, 193);
   position: sticky;
   top: 0;
   width: 100%;
@@ -185,7 +224,9 @@
 }
 
 .tooltip {
-  text-decoration: underline;
+  color: #083643;
+  padding: 2px;
+  border-bottom: 1px solid #7dc5d0;
 }
 
 .tooltip .tooltiptext {
@@ -372,12 +413,10 @@
 
 /* listening */
 
-/* .modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-} */
+.audio-questions {
+  padding: 20px;
+  text-align: justify;
+}
 
 .modal-container {
   position: fixed;
@@ -427,6 +466,7 @@
   .main-container-lessons {
     margin: 0;
     margin-left: 0;
+    padding: 0 10px;
   }
 
   .lesson-block {
@@ -451,7 +491,7 @@
   }
 
   .tooltip-lesson {
-    background: #94c8cba6;
+    background: #94c8cb;
     box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
       0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
     border-radius: 10px;
