@@ -58,15 +58,13 @@ const DragDropForm: React.FC<DragDropFormProps> = ({
 
     const oldWord = userAnswers[sentenceIndex]?.text;
     if (oldWord) {
-      // Возвращаем старое слово обратно в список слов
+
       words.push(oldWord);
-      // Удаляем слово из пользовательских ответов
+ 
       updateUserAnswer(sentenceIndex, word);
     }
 
-    // Обновляем пользовательский ответ
     updateUserAnswer(sentenceIndex, word);
-    // Вызываем функцию передвижения слова
     onWordMove(word);
   };
 

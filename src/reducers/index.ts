@@ -1,11 +1,13 @@
-// reducers/index.ts
-
 import { combineReducers } from 'redux';
-import rootReducer from './rootReducer'; // Путь к вашему корневому редьюсеру
+import rootReducer from './rootReducer';
+import someReducer from './someReducer'; // Импортируем другие редукторы, если есть
 
-const reducers = combineReducers({
-  rootReducer, // Используйте адекватное имя для вашего корневого редьюсера
-  // Другие редьюсеры...
+const rootReducerCombined = combineReducers({
+  root: rootReducer,
+  someSlice: someReducer,
+  // Другие редукторы, если есть
 });
 
-export default reducers;
+export default rootReducerCombined;
+
+

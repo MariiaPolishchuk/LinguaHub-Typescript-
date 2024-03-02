@@ -64,7 +64,19 @@ body {
   background-size: cover;
   min-height: calc(80vh - 64px);
   overflow: hidden;
+}
 
+.levels {
+  width: 100%;
+  min-height: calc(60vh - 64px);
+  padding: 130px 20px;
+
+  background: radial-gradient(
+    circle farthest-corner at 73px 300px,
+    #c4dfe2,
+    #fff
+  );
+  background-attachment: fixed;
 }
 
 .fade-in {
@@ -99,10 +111,12 @@ body {
   }
 }
 
-/* .choose-buttons {
-  gap: 25px;
-  padding: 40px;
-} */
+
+.button-cont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .lesson-button {
   background-color: #1997a8 !important;
@@ -111,28 +125,32 @@ body {
 }
 
 .text {
-  opacity: 0; /* РќР°С‡Р°Р»СЊРЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ: С‚РµРєСЃС‚ СЃРєСЂС‹С‚ */
-  animation: slideInFromLeft 3s ease-in-out forwards; 
+  opacity: 0; 
+  animation: slideInFromLeft 3s ease-in-out forwards;
+  font-weight: 500;
+}
+
+.fast-text {
+  opacity: 0; 
+  animation: slideInFromLeft 0.5s ease-in-out forwards;
   font-weight: 500;
 }
 
 @keyframes slideInFromLeft {
   0% {
-    opacity: 0; /* РќР°С‡Р°Р»СЊРЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ: С‚РµРєСЃС‚ СЃРєСЂС‹С‚ */
+    opacity: 0; 
     transform: translateX(-100%);
   }
   100% {
-    opacity: 1; /* РљРѕРЅРµС‡РЅРѕРµ СЃРѕСЃС‚РѕСЏРЅРёРµ: С‚РµРєСЃС‚ РІРёРґРёРј */
+    opacity: 1; 
     transform: translateX(0);
   }
 }
-
 
 .home-intro {
   color: #e4eaea;
   text-shadow: 1px 1px 2px #062c36;
 }
-
 
 .image-container {
   max-width: 700px;
@@ -181,12 +199,9 @@ a {
 @media (max-width: 1250px) {
 }
 
-  
-
 @media (max-width: 796px) {
-
   .main-content {
-    margin-top: 103px;
+    padding: 130px 20px;
     min-height: calc(60vh - 64px);
   }
 
@@ -204,8 +219,12 @@ a {
   }
 
   .levels {
-    padding: 0 !important;
     width: unset;
+    background: radial-gradient(
+      circle farthest-corner at 100px 50px,
+      #ffffff,
+      #76dfed78
+    );
   }
 }
 
@@ -230,7 +249,6 @@ a {
   padding: 5px;
 }
 
-
 .icons {
   display: flex;
   text-align: center;
@@ -242,11 +260,3 @@ a {
   max-width: 870px;
   width: 100%;
 }
-
-.levels {
-  width: 100%;
-  min-height: calc(80vh - 64px);
-  margin-top: 103px;
-
-}
-

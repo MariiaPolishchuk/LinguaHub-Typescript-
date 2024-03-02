@@ -7,6 +7,7 @@ import Listening from "./Listening";
 import "../../../../styles/Lessons.css";
 import Lesson from "./Lesson";
 import { Button } from "@material-ui/core";
+import DragDropMFM from "./DragDropMFM";
 
 
 const MyFascinatingMorning: React.FC = () => {
@@ -51,8 +52,11 @@ const MyFascinatingMorning: React.FC = () => {
           <Routes>
             <Route path="/lesson" element={<Lesson />} />
             <Route path="/test" element={<Test />} />
+            <Route path="/lesson/drag-drop" element={<DragDropMFM />} />
+
+            
             <Route path="/grammar" element={<Grammar />} />
-            <Route path="/listening" element={<Listening />} />
+            <Route path="/lesson/listening" element={<Listening />} />
           </Routes>
         </>
       )}

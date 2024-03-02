@@ -1,4 +1,4 @@
-const MyFascinatingTextQuiz: { // Определение типа массива вопросов
+const MyFascinatingTextQuiz: { 
     question: string;
     options: string[];
     correctAnswer: string;
@@ -13,7 +13,7 @@ const MyFascinatingTextQuiz: { // Определение типа массива
       options: ['Option A', 'Option B', 'Option C'],
       correctAnswer: 'Option B',
     },
-    // Добавьте больше вопросов при необходимости
+
   ];
   
   export default MyFascinatingTextQuiz;

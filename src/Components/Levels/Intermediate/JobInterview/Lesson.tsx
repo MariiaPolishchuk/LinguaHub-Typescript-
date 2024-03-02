@@ -1,13 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { Provider } from 'react-redux'; 
 import { Tabs, Tab, Button } from "@material-ui/core";
 import ReadingText from "./ReadingText";
-// import Test from "./Test";
-// import Grammar from "./Grammar";
-// import Listening from "./Listening";
+import Test from "./Test";
+import Grammar from "./Grammar";
+import Listening from "./Listening";
 import useRandomQuestion from "../../../UseRandomQuestions";
-import questions from "./RandomQuestions"; // Импортируем массив вопросов из файла Questions
-
+import questions from "./RandomQuestions"; 
+import store from '../../../../store'; 
 const Lesson: React.FC = () => {
+ 
   const {
     outputText,
     askRandomQuestion,
@@ -18,10 +20,10 @@ const Lesson: React.FC = () => {
     askRandomQuestion: () => void;
     isModalOpen: boolean;
     toggleModal: () => void;
-  } = useRandomQuestion(questions); // Передаем массив вопросов в хук useRandomQuestion
+  } = useRandomQuestion(questions); 
 
   const [value, setValue] = useState(0);
-  const modalRef = useRef<HTMLDivElement>(null); // Создаем ref
+  const modalRef = useRef<HTMLDivElement>(null); 
 
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
@@ -34,62 +36,62 @@ const Lesson: React.FC = () => {
   }, [isModalOpen]);
 
   return (
-    <div className="overall fade-in main-container-lessons" ref={modalRef}>
-      {/* Передаем ref */}
-      {/* <Link className="back-link" to="/course/intermediate">
-        &#8592;
-      </Link> */}
+    <Provider store={store}>
+      <div className="overall fade-in main-container-lessons" ref={modalRef}>
 
-      <Tabs
-        className="lesson-tabs"
-        value={value}
-        onChange={handleChange}
-        indicatorColor="primary"
-        textColor="primary"
-        centered
-      >
-        <Tab label="Reading" />
-        <Tab label="Test" />
-        <Tab label="Grammar" />
-        <Tab label="Listening" />
-      </Tabs>
+        <Tabs
+          className="lesson-tabs"
+          value={value}
+          onChange={handleChange}
+          indicatorColor="primary"
+          textColor="primary"
+          centered
+        >
+          <Tab label="Reading" />
+          <Tab label="Test" />
+          <Tab label="Grammar" />
+          <Tab label="Listening" />
+        </Tabs>
 
-      {value === 0 && (
-        <>
-          <ReadingText />
-          <div className="choose-buttons">
-            <Button
-              className="lesson-button"
-              variant="contained"
-              onClick={toggleModal}
-            >
-              Tick here to speak
-            </Button>
-          </div>
-          {isModalOpen && (
-            <div className="modal-container fade-in-fast" ref={modalRef}>
-              {/* Передаем ref */}
-              <div className="modal-content">
-                <div className="modal-header">
-                  <Button onClick={toggleModal}>Close</Button>
-                </div>
-                <div className="modal-body">
-                  {outputText && <p>{outputText}</p>}
-                  <div>
-                    <Button onClick={askRandomQuestion}>Next Question</Button>
+        {value === 0 && (
+          <>
+            <ReadingText />
+            <div className="choose-buttons">
+              <Button
+                className="lesson-button"
+                variant="contained"
+                onClick={toggleModal}
+              >
+                Tick here to speak
+              </Button>
+            </div>
+            {isModalOpen && (
+              <div className="modal-container fade-in-fast" ref={modalRef}>
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <Button onClick={toggleModal}>Close</Button>
+                  </div>
+                  <div className="modal-body">
+                    {outputText && <p>{outputText}</p>}
+                    <div>
+                      <Button onClick={askRandomQuestion}>Next Question</Button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
-        </>
-      )}
-      {/* 
-      {value === 1 && <Test />}
-      {value === 2 && <Grammar />}
-      {value === 3 && <Listening />} */}
-    </div>
+            )}
+          </>
+        )}
+
+        {value === 1 && <Test navigateToTheNextTab={function (newValue: number): void {
+          throw new Error("Function not implemented.");
+        } } />}
+        {value === 2 && <Grammar />}
+        {value === 3 && <Listening />}
+      </div>
+    </Provider>
   );
 };
 
 export default Lesson;
+

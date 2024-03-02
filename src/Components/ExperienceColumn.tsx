@@ -11,7 +11,7 @@ const ExperienceColumn2: React.FC = () => {
     speed: 2500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 2000
   };
 

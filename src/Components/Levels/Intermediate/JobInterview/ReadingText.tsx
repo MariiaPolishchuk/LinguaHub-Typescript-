@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../../../styles/ReadingText.css";
 
+
 const ReadingText = () => {
+ 
   return (
     <div className="reading">
       <h4>
@@ -28,6 +30,21 @@ const ReadingText = () => {
         questions, such as your strengths, weaknesses, accomplishments, and why
         you want the job. Practice your responses to ensure they are concise and
         relevant.
+      </p>
+      <p>
+        Hypothetical interview questions are similar to competency questions
+        except that instead of asking you to talk about an experience you've had
+        in the past, they present you with an imaginary situation that you might
+        face in your new job. This might seem difficult to prepare for, but
+        remember that your answers are meant to demonstrate the skills needed
+        for the job. When preparing for the interview, consider the qualities
+        that the interviewer might be looking for, qualities like conflict
+        management, time management or people skills. Then think about how you
+        can demonstrate those qualities in a range of situations. Start with
+        situations that you've experienced and move on to other possible
+        situations that you might encounter in the role you're applying for.
+        Avoid: Going off-topic, changing the subject and not answering the
+        original question.
       </p>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Button, Box, Modal } from "@material-ui/core";
 import styled from "styled-components";
 
@@ -55,7 +55,7 @@ const AudioComponent: React.FC<AudioProps> = ({ audioFile, questions }) => {
       audioRef.current.pause();
       setAudioQuestionObj(questionObj);
       setAudioAnswerChecked(true);
-      setModalOpen(true); // Open the modal when question appears
+      setModalOpen(true); 
     }
 
     if (!audioQuestionObj && currentTime >= audioRef.current.duration) {
@@ -116,7 +116,7 @@ const AudioComponent: React.FC<AudioProps> = ({ audioFile, questions }) => {
       audioRef.current.currentTime = audioRef.current.currentTime + 1;
       audioRef.current.play();
 
-      // Clear styles
+
       questions.forEach(question => {
         question.blanks.forEach(blank => {
           const blankElement = document.getElementById(blank);
@@ -126,7 +126,7 @@ const AudioComponent: React.FC<AudioProps> = ({ audioFile, questions }) => {
         });
       });
 
-      // Clear results
+
       if (audioResultsElement) {
         audioResultsElement.innerHTML = '';
       }
@@ -172,7 +172,7 @@ const AudioComponent: React.FC<AudioProps> = ({ audioFile, questions }) => {
     }
 
     setAudioAnswerChecked(false);
-    setModalOpen(false); // Close the modal when submitting answer
+    setModalOpen(false); 
     if(audioQuestionObj)
       checkAnswers(audioQuestionObj);
   }, [audioAnswerChecked, audioQuestionObj, checkAnswers]);

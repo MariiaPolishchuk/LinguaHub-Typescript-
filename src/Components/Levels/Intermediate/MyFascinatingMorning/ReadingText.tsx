@@ -13,6 +13,7 @@ const ReadingText = () => {
         Task. Read the text carefully, pay attention to the highlighted words.
         Tick the button to answer the questions.
       </h4>
+      <div className="read">
       <h3 className="theme-start">The Enchanting World of Morning Rituals</h3>
       <p>
         In the{" "}
@@ -166,6 +167,7 @@ const ReadingText = () => {
         </CustomTooltip>
         life.
       </p>
+      </div>
     </div>
   );
 };

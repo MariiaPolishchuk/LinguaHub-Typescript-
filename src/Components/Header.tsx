@@ -24,6 +24,11 @@ const Header: React.FC<HeaderProps> = ({
   const [prevScrollPos, setPrevScrollPos] = useState<number>(window.pageYOffset);
   const [visible, setVisible] = useState<boolean>(true);
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
+  const [isContentHovered, setIsContentHovered] = useState(false);
+
+  const handleContentHover = (isHovered: boolean) => {
+    setIsContentHovered(isHovered);
+  };
 
   const handleScroll = useCallback(() => {
     const currentScrollPos = window.pageYOffset;
@@ -71,10 +76,36 @@ const Header: React.FC<HeaderProps> = ({
 
         <nav id="nav" className={`toggle ${isBurgerOpen ? "open" : "close"}`}>
           <ul id="nav-ul">
-            <li>
-              <Link to="/course" onClick={closeMenu}>
-                Content
-              </Link>
+            
+            <li
+              onMouseEnter={() => handleContentHover(true)}
+              onMouseLeave={() => handleContentHover(false)}
+            >
+              <div className="content-li" onClick={closeMenu}>
+                <a href="">Content</a>
+                
+                {isContentHovered && (
+                  <div className="content fade-in-fast">
+                    <ul className="header-choose-levels fade-in-fast fast-text">
+                      <li className="choose-levels-li">
+                        <Link  to="/course/beginner" onClick={closeMenu}>
+                          Beginner
+                        </Link>
+                      </li>
+                      <li className="choose-levels-li">
+                        <Link to="/course/intermediate" onClick={closeMenu}>
+                          Intermediate
+                        </Link>
+                      </li>
+                      <li className="choose-levels-li">
+                        <Link to="/course/advanced" onClick={closeMenu}>
+                          Advanced
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
             </li>
             <li>
               <Link to="/about" onClick={closeMenu}>

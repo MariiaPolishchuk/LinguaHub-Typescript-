@@ -6,13 +6,13 @@ const useRandomQuestion = (questions: string[]) => {
 
     useEffect(() => {
         if (questions.length === 0) {
-            setOutputText(""); // Обнуляем outputText, если вопросов нет
-            setIsModalOpen(false); // Закрываем модальное окно, если вопросов нет
+            setOutputText(""); 
+            setIsModalOpen(false); 
         }
     }, [questions]);
 
     const askRandomQuestion = () => {
-        if (questions.length === 0) return; // Добавляем проверку наличия вопросов
+        if (questions.length === 0) return; 
         const randomIndex = Math.floor(Math.random() * questions.length);
         const randomQuestion = questions[randomIndex];
         setOutputText(randomQuestion);
