@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
+// import CustomTooltip from "../../../../Components/features/Tooltip-for-read/CustomTooltip";
 import "../../../../styles/ReadingText.css";
 
 

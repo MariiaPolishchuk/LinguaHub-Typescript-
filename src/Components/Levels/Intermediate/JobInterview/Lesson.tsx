@@ -5,7 +5,7 @@ import ReadingText from "./ReadingText";
 import Test from "./Test";
 import Grammar from "./Grammar";
 import Listening from "./Listening";
-import useRandomQuestion from "../../../UseRandomQuestions";
+import useRandomQuestion from "../../../features/Random-questions-reading/UseRandomQuestions";
 import questions from "./RandomQuestions"; 
 import store from '../../../../store'; 
 const Lesson: React.FC = () => {

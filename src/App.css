@@ -68,9 +68,7 @@ body {
 
 .levels {
   width: 100%;
-  min-height: calc(60vh - 64px);
-  padding: 130px 20px;
-
+  min-height: calc(95vh - 64px);
   background: radial-gradient(
     circle farthest-corner at 73px 300px,
     #c4dfe2,
@@ -78,6 +76,12 @@ body {
   );
   background-attachment: fixed;
 }
+
+.topics {
+  padding: 130px 60px;
+}
+
+
 
 .fade-in {
   opacity: 0;
@@ -173,7 +177,7 @@ body {
   left: 22%;
   top: 40%;
   z-index: 999;
-  text-shadow: 0 0 4px #062c365e;
+  text-shadow: 0 0 20px #fff !important;
   color: #090909e3;
 }
 .carousel-size {
@@ -195,6 +199,14 @@ a {
 
 .topic-list a {
   color: #247e8c !important;
+}
+
+h3 {
+  background: radial-gradient(circle farthest-corner at 100px 50px, #94c8cb, #1597a7c9);
+  padding: 20px;
+  border-radius: 20px;
+  color: rgba(0, 0, 0, 0.87);
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
 }
 @media (max-width: 1250px) {
 }
@@ -225,6 +237,7 @@ a {
       #ffffff,
       #76dfed78
     );
+    padding: 130px 0px;
   }
 }
 

@@ -4,9 +4,10 @@ import ReadingText from "./ReadingText";
 import Test from "./Test";
 import Grammar from "./Grammar";
 import Listening from "./Listening";
-import useRandomQuestion from "../../../UseRandomQuestions";
-import RandomQuestions from "./RandomQuestions"; 
+import useRandomQuestion from "../../../features/Random-questions-reading/UseRandomQuestions";
+import RandomQuestions from "./RandomQuestions";
 import { useNavigate } from "react-router-dom";
+import "../../../../styles/Lessons.css";
 
 const Lesson: React.FC = () => {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ const Lesson: React.FC = () => {
     navigate("/course/intermediate/myfascinatingmorning/lesson/listening");
     setValue(3);
   };
-  
+
   const {
     outputText,
     askRandomQuestion,
@@ -29,7 +30,7 @@ const Lesson: React.FC = () => {
     askRandomQuestion: () => void;
     isModalOpen: boolean;
     toggleModal: () => void;
-  } = useRandomQuestion(RandomQuestions); 
+  } = useRandomQuestion(RandomQuestions);
 
   const [value, setValue] = useState(0);
   const modalRef = useRef<HTMLDivElement>(null);
@@ -48,9 +49,9 @@ const Lesson: React.FC = () => {
   const isSmallScreen = () => {
     return window.innerWidth < 600;
   };
-  
+
   return (
-    <div className="overall fade-in main-container-lessons" ref={modalRef}> 
+    <div className="overall fade-in main-container-lessons" ref={modalRef}>
       <Tabs
         className="lesson-tabs"
         value={value}
@@ -68,35 +69,41 @@ const Lesson: React.FC = () => {
 
       {value === 0 && (
         <>
-          <ReadingText />
-          <div className="choose-buttons">
-            <Button
-              className="lesson-button"
-              variant="contained"
-              onClick={toggleModal}
-            >
-              Tick here to speak
-            </Button>
+          <div className="reading-container">
+            <ReadingText />
+            <div className="choose-buttons">
+              <Button
+                className="lesson-button"
+                variant="contained"
+                onClick={toggleModal}
+              >
+                Tick here to speak
+              </Button>
 
-            <Button
-              className="lesson-button"
-              variant="contained"
-              onClick={handleStartListening}
-            >
-              Start Listening
-            </Button>
-
+              <Button
+                className="lesson-button"
+                variant="contained"
+                onClick={handleStartListening}
+              >
+                Start Listening
+              </Button>
+            </div>
           </div>
           {isModalOpen && (
-            <div className="modal-container fade-in-fast" ref={modalRef}> 
+            <div className="modal-container fade-in-fast" ref={modalRef}>
               <div className="modal-content">
                 <div className="modal-header">
-                  <Button onClick={toggleModal}>Close</Button>
+                  {/* <Button onClick={toggleModal}>Close</Button> */}
                 </div>
                 <div className="modal-body">
-                  {outputText && <p>{outputText}</p>}
-                  <div>
+                  {outputText && (
+                    <p className="random-questions text fade-in-fast">
+                      {outputText}
+                    </p>
+                  )}
+                  <div className="modal-buttons">
                     <Button onClick={askRandomQuestion}>Next Question</Button>
+                    <Button onClick={toggleModal}>Close</Button>
                   </div>
                 </div>
               </div>

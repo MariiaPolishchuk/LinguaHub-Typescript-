@@ -25,7 +25,6 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-
 }
 
 .home-img {
@@ -35,8 +34,6 @@
   min-height: calc(109vh - 64px);
 }
 
-
-
 .home-intro {
   position: absolute;
   width: 100%;
@@ -45,6 +42,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1; /* Помещаем текст над изображением */
+}
+
+.text-column {
+  max-width: 900px;
+  margin-top: 150px;
+  margin-left: 30px;
 }
 
 .text-intro {
@@ -71,7 +74,7 @@
   margin-bottom: 20px;
   margin: 0 60px;
   display: flex;
-  padding: 5px 20px;
+  padding: 5px 50px;
 }
 
 /* Стили для кнопки */
@@ -96,10 +99,7 @@
   justify-content: center;
 }
 
-
-
 @media (max-width: 905px) {
- 
   .logo-icon {
     width: 50px;
   }
@@ -120,7 +120,6 @@
     display: flex;
     right: 243px;
     position: relative;
-  
   }
   .home-intro .text {
     font-size: xx-large;
@@ -131,11 +130,10 @@
     margin-left: 0 !important;
     margin: 0;
     font-size: medium;
-  };
+  }
 }
 
 @media (max-width: 796px) {
-
   .carousel-lessons {
     position: absolute;
     left: 20px;

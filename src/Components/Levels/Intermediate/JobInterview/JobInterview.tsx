@@ -4,8 +4,8 @@ import Test from "./Test";
 import Listening from "./Listening";
 import Lesson from "./Lesson";
 import { Button } from "@material-ui/core";
-import "../../../../styles/Lessons.css";
-import '../../../../styles/JobInterview.css';
+import "../../../../styles/JobInterview.css"
+
 
 
 const JobInterview: React.FC = () => {

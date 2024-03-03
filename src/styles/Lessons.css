@@ -3,9 +3,14 @@
   flex-direction: column;
 }
 .main-container-lessons {
-  padding: 0 40px;
+  padding: 80px 60px;
   display: flex;
   flex-direction: column;
+  /* box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12); */
+}
+
+.overall {
+  padding: 0;
 }
 
 .start-lesson {
@@ -14,10 +19,11 @@
   align-items: center;
   justify-content: space-between;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  padding: 10px 0;
 }
 
 .test-form .start-lesson {
-  margin-left: 275px !important;
+  margin-left: 230px !important;
 }
 
 .back-link {
@@ -30,7 +36,13 @@
 .lesson-wrapper {
   display: flex;
   height: 3px;
-  background: radial-gradient(circle farthest-corner at 298px 5px, #1997a8, #78dae8, #55d9e1, #1997a8);
+  background: radial-gradient(
+    circle farthest-corner at 298px 5px,
+    #1997a8,
+    #78dae8,
+    #55d9e1,
+    #1997a8
+  );
   border-radius: 10px;
   width: 100%;
   max-width: 100%;
@@ -82,16 +94,29 @@
   justify-content: flex-end;
 }
 
+.theme-start {
+  background: none;
+  box-shadow: none;
+  padding: 0;
+}
+
 .main-container-lessons .reading {
   margin-left: 0 !important;
 }
 .MuiTabs-flexContainer {
+  justify-content: end !important;
+  margin-bottom: 20px !important;
+}
+
+.lesson-tabs {
+  margin-bottom: 20px !important;
   justify-content: end !important;
 }
 
 .button-cont {
   padding: 20px;
 }
+
 
 .tooltip {
   color: #4050b5;
@@ -101,6 +126,12 @@
   text-align: justify;
   line-height: 1.5;
   max-width: 800px;
+
+  background-color: rgb(255 255 255 / 80%);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 
 .blocks {
@@ -109,13 +140,7 @@
   gap: 10px;
   align-items: center;
   position: relative;
-  margin-left: 150px;
-}
-.read {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+  margin-left: 185px;
 }
 
 .MuiTab-textColorPrimary.Mui-selected {
@@ -124,9 +149,14 @@
 }
 
 .PrivateTabIndicator-colorPrimary-2 {
-  background: radial-gradient(circle farthest-corner at 298px 5px, #1997a8, #78dae8, #55d9e1, #1997a8);
+  background: radial-gradient(
+    circle farthest-corner at 298px 5px,
+    #1997a8,
+    #78dae8,
+    #55d9e1,
+    #1997a8
+  );
 }
-
 
 /* Модальное окно */
 .modal-container {
@@ -163,6 +193,18 @@
 /* Тело модального окна */
 .modal-body {
   color: black;
+}
+
+.random-questions {
+  text-align: center;
+  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+  padding: 20px;
+  background-color: #1f8e9d26;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
 }
 
 .lesson-button {
@@ -367,12 +409,17 @@
 .quiz-container {
   display: flex;
   gap: 25px;
+  border-radius: 10px;
 }
 
 .quiz-text {
   text-align: justify;
   max-width: 850px;
   line-height: 1.2 !important;
+}
+
+.quiz-container li {
+  padding: 0;
 }
 
 .drag-container {
@@ -544,6 +591,19 @@
   .word {
     margin-top: 10px;
   }
+
+  .task-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+  }
+}
+
+@media only screen and (max-width: 853px) {
+  .forms li {
+    display: list-item;
+  }
 }
 
 @media only screen and (max-width: 720px) {
@@ -551,5 +611,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+  }
+  .start-lesson {
+    margin-left: 0;
   }
 }

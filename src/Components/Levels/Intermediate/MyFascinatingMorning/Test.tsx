@@ -1,27 +1,22 @@
 import React, { useState } from "react";
-import TestForm from "../../../TestForm";
-import DragDropMFM from "./DragDropMFM";
-import Synonyms from "../../../Synonyms";
+import TestForm from "../../../../Components/features/TestForm/TestForm";
+import Synonyms from "../../../features/Find-synonyms/Synonyms";
 import { synonyms, words } from "./SynonymsData";
-import VocabularyPractice from "../../../VocabularyPractise";
+import VocabularyPractice from "../../../../Components/features/VocabularyDragText/VocabularyPractise";
 import vocabularyData from "./data";
-import Sticker from "../../../Sticker";
+import Sticker from "../../../../Components/features/Tooltip-for-test/Sticker";
 import terms from "./TermListData";
-import { Button } from "@mui/material";
-import { Link, Routes, Route, useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 const Test: React.FC = () => {
   const navigate = useNavigate();
   const [showStartButton, setShowStartButton] = useState(true);
   const [] = useState(0);
-  
+
   const handleStartDrag = () => {
     setShowStartButton(false);
-    navigate("/course/intermediate/myfascinatingmorning/lesson/drag-drop"); 
+    navigate("/course/intermediate/myfascinatingmorning/lesson/drag-drop");
   };
-
-
 
   const questionsAndAnswers = [
     {
@@ -113,15 +108,19 @@ const Test: React.FC = () => {
           <TestForm questionsAndAnswers={questionsAndAnswers} />
           {/* <DragDropMFM /> */}
 
-          <Button
-            className="lesson-button"
-            variant="contained"
-            onClick={handleStartDrag}
-          >
-            Next
-          </Button>
+          <a href="#" className="lesson-link" onClick={handleStartDrag}>
+            Next{" "}
+            <img
+              className="arrow-bold"
+              src="/src/assets/images/arrow-bold.png"
+              alt=""
+            />
+          </a>
           <Synonyms words={words} synonyms={synonyms} />
-          <VocabularyPractice vocabularyData={vocabularyData} />
+          <VocabularyPractice
+            text={vocabularyData.text}
+            words={vocabularyData.words}
+          />
         </div>
       </div>
     </div>
@@ -129,7 +128,3 @@ const Test: React.FC = () => {
 };
 
 export default Test;
-
-function setShowStartButton(arg0: boolean) {
-  throw new Error("Function not implemented.");
-}

@@ -1,16 +1,15 @@
 import React from "react";
 import GrammarMFM, { WordsGame } from "./GrammarMFM";
-import GrammarInput from "../../../GrammarInput";
+import GrammarInput from "../../../features/Grammar-input/GrammarInput";
 
 const Grammar: React.FC = () => {
-    const game: WordsGame = GrammarMFM; 
+  const game: WordsGame = GrammarMFM;
 
-    return (
-        <div>
-            <h2>Grammar</h2>
-            <GrammarInput game={GrammarMFM} /> 
-        </div>
-    );
-}
+  return (
+    <div>
+      <GrammarInput game={GrammarMFM} />
+    </div>
+  );
+};
 
 export default Grammar;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import DragDropForm from "../../../DragDropForm";
+import DragDropForm from "../../../features/Drag-drop-sentences/DragDropForm";
 
 interface Sentence {
   id: string;
@@ -17,7 +17,13 @@ interface DragDropFormProps extends WordsGame {
   resetGame: () => void;
 }
 
-const initialWordsData: string[] = ["craft", "burst", "forth", "set forth", "they set forth"];
+const initialWordsData: string[] = [
+  "craft",
+  "burst",
+  "forth",
+  "set forth",
+  "they set forth",
+];
 
 const sentencesData: Sentence[] = [
   {
@@ -51,7 +57,7 @@ const DragDropMFM: React.FC = () => {
   }, [resetFlag]);
 
   const handleWordMove = (word: string) => {
-    setWordsData(prevWords => prevWords.filter(w => w !== word));
+    setWordsData((prevWords) => prevWords.filter((w) => w !== word));
   };
 
   const resetGame = () => {
@@ -61,11 +67,14 @@ const DragDropMFM: React.FC = () => {
   return (
     <div>
       <h4>Drag words into the right gaps!</h4>
-      <DragDropForm sentences={sentencesData} words={wordsData} onWordMove={handleWordMove} resetGame={resetGame} />
+      <DragDropForm
+        sentences={sentencesData}
+        words={wordsData}
+        onWordMove={handleWordMove}
+        resetGame={resetGame}
+      />
     </div>
   );
 };
 
 export default DragDropMFM;
-
-

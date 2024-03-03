@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,60 +11,38 @@ interface User {
 interface HeaderProps {
   user: User | null;
   onLogout: () => void;
-  showModeratorBoard: boolean;
-  showAdminBoard: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({
-  user,
-  onLogout,
-  showModeratorBoard,
-  showAdminBoard
-}) => {
-  const [prevScrollPos, setPrevScrollPos] = useState<number>(window.pageYOffset);
-  const [visible, setVisible] = useState<boolean>(true);
+const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
-  const [isContentHovered, setIsContentHovered] = useState(false);
-
-  const handleContentHover = (isHovered: boolean) => {
-    setIsContentHovered(isHovered);
-  };
-
-  const handleScroll = useCallback(() => {
-    const currentScrollPos = window.pageYOffset;
-    const isVisible = prevScrollPos > currentScrollPos;
-
-    setPrevScrollPos(currentScrollPos);
-    setVisible(isVisible);
-  }, [prevScrollPos]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [handleScroll]);
+  const [isContentOpen, setIsContentOpen] = useState<boolean>(false);
 
   const handleBurgerClick = () => {
     setIsBurgerOpen(!isBurgerOpen);
   };
 
+  const handleContentClick = () => {
+    setIsContentOpen(!isContentOpen);
+  };
+
   const closeMenu = () => {
     setIsBurgerOpen(false);
+    setIsContentOpen(false);
+  };
+
+  const handleContentLiClick = () => {
+    setIsContentOpen(!isContentOpen);
   };
 
   return (
-    <header className={`header ${visible ? "" : "out"}`} role="banner">
+    <header className={`header ${isBurgerOpen ? "out" : ""}`} role="banner">
       <div className="header-container">
         <Link to="/home" className="logo">
-          {" "}
           <img
             className="logo-icon"
-            src="src/assets/images/icons/logo-LINGUApro.png"
+            src="src/assets/images/icons/LINGUAHUB-logo.png"
             alt="Logo"
           />
-          {" "}
         </Link>
 
         <span
@@ -76,28 +54,36 @@ const Header: React.FC<HeaderProps> = ({
 
         <nav id="nav" className={`toggle ${isBurgerOpen ? "open" : "close"}`}>
           <ul id="nav-ul">
-            
-            <li
-              onMouseEnter={() => handleContentHover(true)}
-              onMouseLeave={() => handleContentHover(false)}
-            >
-              <div className="content-li" onClick={closeMenu}>
-                <a href="">Content</a>
-                
-                {isContentHovered && (
+            <li>
+              <div
+                className={`content-li ${isContentOpen ? "active" : ""}`}
+                onClick={handleContentClick}
+              >
+                <a href="#">Content</a>
+
+                {isContentOpen && (
                   <div className="content fade-in-fast">
                     <ul className="header-choose-levels fade-in-fast fast-text">
-                      <li className="choose-levels-li">
-                        <Link  to="/course/beginner" onClick={closeMenu}>
+                      <li
+                        className="choose-levels-li"
+                        onClick={handleContentLiClick}
+                      >
+                        <Link to="/course/beginner" onClick={closeMenu}>
                           Beginner
                         </Link>
                       </li>
-                      <li className="choose-levels-li">
+                      <li
+                        className="choose-levels-li"
+                        onClick={handleContentLiClick}
+                      >
                         <Link to="/course/intermediate" onClick={closeMenu}>
                           Intermediate
                         </Link>
                       </li>
-                      <li className="choose-levels-li">
+                      <li
+                        className="choose-levels-li"
+                        onClick={handleContentLiClick}
+                      >
                         <Link to="/course/advanced" onClick={closeMenu}>
                           Advanced
                         </Link>
@@ -117,22 +103,6 @@ const Header: React.FC<HeaderProps> = ({
                 Trial
               </Link>
             </li>
-
-            {/* {showModeratorBoard && (
-              <li>
-                <Link to="/mod" onClick={closeMenu}>
-                  Moderator Board
-                </Link>
-              </li>
-            )}
-
-            {showAdminBoard && (
-              <li>
-                <Link to="/admin" onClick={closeMenu}>
-                  Admin Board
-                </Link>
-              </li>
-            )} */}
 
             {user ? (
               <li>

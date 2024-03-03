@@ -1,9 +1,10 @@
 
 import React from "react";
-import TestForm from "../../../TestForm";
-import Sticker from "../../../Sticker";
+import TestForm from "../../../../Components/features/TestForm/TestForm";
+import Sticker from "../../../../Components/features/Tooltip-for-test/Sticker";
 import terms from "./TermListData";
 import "../../../../styles/Test.css";
+import "../../../../styles/JobInterview.css";
 
 interface TestProps {
   navigateToTheNextTab: (newValue: number) => void;

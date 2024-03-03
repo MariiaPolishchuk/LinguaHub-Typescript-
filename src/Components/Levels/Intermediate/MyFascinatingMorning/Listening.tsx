@@ -1,12 +1,10 @@
 import React from "react";
 import MyFascinatingMorningAudio from "./MyFascinatingMorningAudio";
 
-
-
 const Listening = () => {
   return (
     <div>
-     <MyFascinatingMorningAudio />
+      <MyFascinatingMorningAudio />
     </div>
   );
 };

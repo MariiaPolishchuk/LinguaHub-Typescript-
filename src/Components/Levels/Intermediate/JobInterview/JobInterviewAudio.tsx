@@ -1,5 +1,5 @@
 import React from "react";
-import AudioComponent from "../../../AudioComponent";
+import AudioComponent from "../../../../Components/features/AudioComponent/AudioComponent"; 
 
 const JobInterviewAudio: React.FC = () => {
   const AudioQuestions = [

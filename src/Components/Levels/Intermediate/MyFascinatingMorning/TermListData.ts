@@ -1,5 +1,3 @@
-
-
 interface Term {
   word: string;
   description: string;

@@ -1,5 +1,5 @@
 import React from "react";
-import AudioComponent from "../../../AudioComponent"; 
+import AudioComponent from "../../../../Components/features/AudioComponent/AudioComponent"; 
 
 const MyFascinatingMorningAudio: React.FC = () => {
   const MFMAudioQuestions = [
@@ -29,11 +29,6 @@ const MyFascinatingMorningAudio: React.FC = () => {
 };
 
 export default MyFascinatingMorningAudio;
-
-
-
-
-
 
 
 
