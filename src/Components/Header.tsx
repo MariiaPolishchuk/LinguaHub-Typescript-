@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -16,6 +16,23 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
   const [isContentOpen, setIsContentOpen] = useState<boolean>(false);
+  const [prevScrollPos, setPrevScrollPos] = useState<number>(0);
+  const [visible, setVisible] = useState<boolean>(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = document.documentElement.scrollTop;
+      const isVisible = prevScrollPos > currentScrollPos;
+      setPrevScrollPos(currentScrollPos);
+      setVisible(isVisible);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
 
   const handleBurgerClick = () => {
     setIsBurgerOpen(!isBurgerOpen);
@@ -35,7 +52,7 @@ const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
   };
 
   return (
-    <header className={`header ${isBurgerOpen ? "out" : ""}`} role="banner">
+    <header className={`header ${!visible ? "out" : ""}`} role="banner">
       <div className="header-container">
         <Link to="/home" className="logo">
           <img

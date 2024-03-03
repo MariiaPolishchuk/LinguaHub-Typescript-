@@ -24,9 +24,7 @@ function App() {
       <div>
         <Header
           user={user}
-          // showModeratorBoard={showModeratorBoard}
-          // showAdminBoard={showAdminBoard}
-          onLogout={() => {}}
+          onLogout={() => { } }
         />
         <Routes>
           <Route path="/" element={<Home />} />

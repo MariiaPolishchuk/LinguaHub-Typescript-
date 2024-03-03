@@ -276,9 +276,9 @@
   margin: 0 !important;
   font-weight: 600;
   color: #fff;
-
   max-height: 700px !important;
   overflow-y: auto !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4) !important;
 }
 
 .tooltip-lesson p {
@@ -286,6 +286,7 @@
   color: #1997a8;
   font-weight: 900;
   font-size: 2em;
+  text-shadow: 2px 2px 4px rgba(236, 233, 233, 0.4) !important;
 }
 
 .tooltip {
