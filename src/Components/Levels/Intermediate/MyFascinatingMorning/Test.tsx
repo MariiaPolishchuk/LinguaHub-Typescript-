@@ -6,7 +6,7 @@ import VocabularyPractice from "../../../../Components/features/VocabularyDragTe
 import vocabularyData from "./data";
 import Sticker from "../../../../Components/features/Tooltip-for-test/Sticker";
 import terms from "./TermListData";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Test: React.FC = () => {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ const Test: React.FC = () => {
 
   const handleStartDrag = () => {
     setShowStartButton(false);
-    navigate("/course/intermediate/myfascinatingmorning/lesson/drag-drop");
+    navigate("/course/intermediate/my-fascinating-morning/lesson/drag-drop");
   };
 
   const questionsAndAnswers = [
@@ -108,14 +108,14 @@ const Test: React.FC = () => {
           <TestForm questionsAndAnswers={questionsAndAnswers} />
           {/* <DragDropMFM /> */}
 
-          <a href="#" className="lesson-link" onClick={handleStartDrag}>
-            Next{" "}
-            <img
-              className="arrow-bold"
-              src="/src/assets/images/arrow-bold.png"
-              alt=""
-            />
-          </a>
+          <Link
+            className="lesson-link"
+            onClick={handleStartDrag}
+            to="/course/intermediate/my-fascinating-morning/lesson/drag-drop"
+          >
+            Next &gt;
+          </Link>
+
           <Synonyms words={words} synonyms={synonyms} />
           <VocabularyPractice
             text={vocabularyData.text}

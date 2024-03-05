@@ -6,6 +6,7 @@ import CourseButtons from "./CourseButtons";
 const CourseLevels = () => {
   return (
     <div className="levels">
+      
       <Routes>
         <Route path="/" element={<CourseButtons />} />
         <Route path="intermediate/*" element={<Intermediate />} />
@@ -15,3 +16,5 @@ const CourseLevels = () => {
 };
 
 export default CourseLevels;
+
+

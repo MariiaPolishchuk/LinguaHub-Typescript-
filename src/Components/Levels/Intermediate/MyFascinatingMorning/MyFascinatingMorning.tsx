@@ -13,12 +13,13 @@ const MyFascinatingMorning: React.FC = () => {
 
   const handleStart = () => {
     setShowStartButton(false);
-    navigate("/course/intermediate/myfascinatingmorning/lesson");
+    navigate("/course/intermediate/my-fascinating-morning/lesson");
   };
 
   return (
     <div className="main-container-lessons">
       <div className="start-lesson">
+        {/* <img className="lesson-name-icon" src="/src/assets/images/icons/lesson-name-icon.png" alt="" /> */}
         <h2 className="lesson-name">MyFascinatingMorning</h2>
         <div className="lesson-wrapper"></div>
         <Link className="back-link" to="/course/intermediate">
@@ -48,26 +49,21 @@ const MyFascinatingMorning: React.FC = () => {
             </div>
           </div>
           <Link
-            to="/course/intermediate/myfascinatingmorning/lesson"
+            to="/course/intermediate/my-fascinating-morning/lesson"
             className="lesson-link"
             onClick={handleStart}
           >
-            Start{" "}
-            <img
-              className="arrow-bold"
-              src="/src/assets/images/arrow-bold.png"
-              alt=""
-            />
+            Start &gt;
           </Link>
         </div>
       )}
       {!showStartButton && (
         <>
           <Routes>
-            <Route path="/lesson" element={<Lesson />} />
-            <Route path="/test" element={<Test />} />
+            <Route path="/lesson/" element={<Lesson />} />
+            <Route path="/lesson/test" element={<Test />} />
             <Route path="/lesson/drag-drop" element={<DragDropMFM />} />
-            <Route path="/grammar" element={<Grammar />} />
+            <Route path="/lesson/grammar" element={<Grammar />} />
             <Route path="/lesson/listening" element={<Listening />} />
           </Routes>
         </>
@@ -77,3 +73,12 @@ const MyFascinatingMorning: React.FC = () => {
 };
 
 export default MyFascinatingMorning;
+
+
+
+
+
+
+
+
+

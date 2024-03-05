@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const IntermediateTopics: React.FC = () => {
   return (
     <div className="topics">
-      <h2>Intermediate Topics</h2>
+      <h2 className="level-name">Intermediate Topics</h2>
       <div className="topic-list">
-        <Link to="myfascinatingmorning">My Fascinating Morning</Link>
+        <Link to="my-fascinating-morning">My Fascinating Morning</Link>
         <Link to="jobinterview">Job Interview</Link>
       </div>
     </div>
@@ -14,3 +14,6 @@ const IntermediateTopics: React.FC = () => {
 };
 
 export default IntermediateTopics;
+
+
+
