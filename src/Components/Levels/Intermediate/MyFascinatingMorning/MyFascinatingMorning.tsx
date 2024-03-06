@@ -19,14 +19,12 @@ const MyFascinatingMorning: React.FC = () => {
   return (
     <div className="main-container-lessons">
       <div className="start-lesson">
-        {/* <img className="lesson-name-icon" src="/src/assets/images/icons/lesson-name-icon.png" alt="" /> */}
+        {/* <img className="lesson-name-icon" src="/src/assets/images/icons/dd.png" alt="" /> */}
         <h2 className="lesson-name">MyFascinatingMorning</h2>
-        <div className="lesson-wrapper"></div>
         <Link className="back-link" to="/course/intermediate">
-          &#8592;
+          &lt;Back
         </Link>
       </div>
-
       {showStartButton && (
         <div className="description">
           <div className="description-content">
@@ -73,12 +71,3 @@ const MyFascinatingMorning: React.FC = () => {
 };
 
 export default MyFascinatingMorning;
-
-
-
-
-
-
-
-
-

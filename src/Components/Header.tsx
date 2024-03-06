@@ -57,7 +57,7 @@ const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
         <Link to="/home" className="logo">
           <img
             className="logo-icon"
-            src="src/assets/images/icons/LINGUAHUB-logo.png"
+            src="src/assets/images/icons/LINGUA.png"
             alt="Logo"
           />
         </Link>
