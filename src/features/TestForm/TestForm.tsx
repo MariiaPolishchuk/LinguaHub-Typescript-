@@ -71,7 +71,7 @@ const TestForm: React.FC<TestFormProps> = ({ questionsAndAnswers }) => {
           </li>
         ))}
       </ul>
-
+<div className="choose-buttons">
       <Button
         className="lesson-button"
         variant="contained"
@@ -86,6 +86,7 @@ const TestForm: React.FC<TestFormProps> = ({ questionsAndAnswers }) => {
       >
         Start again
       </Button>
+      </div>
     </div>
   );
 };

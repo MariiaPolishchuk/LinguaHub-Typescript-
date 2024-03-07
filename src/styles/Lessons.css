@@ -9,6 +9,9 @@
   padding: 0;
 }
 
+.block {
+  margin-left: 100px;
+}
 .start-lesson {
   display: flex;
   flex-direction: row-reverse;
@@ -95,7 +98,7 @@
 
 .lesson-name {
   width: 100%;
-  padding: 20px;
+  padding: 20px 40px;
   margin: 0;
   background: radial-gradient(
     circle farthest-corner at 73px 300px,
@@ -123,6 +126,7 @@
   box-shadow: none;
   padding: 0;
   color: black;
+  margin: 20px 0;
 }
 
 .main-container-lessons .reading {
@@ -150,6 +154,10 @@
   padding: 0 20px;
 }
 
+.reading-page {
+  padding: 0 80px;
+}
+
 .reading {
   text-align: justify;
   padding: 0 70px;
@@ -167,7 +175,7 @@
   gap: 10px;
   align-items: center;
   position: relative;
-  margin-left: 185px;
+  margin-left: 268px;
 }
 
 .MuiTab-textColorPrimary.Mui-selected {
@@ -268,37 +276,14 @@
 
 /* sticker */
 
-/* .sticker-container {
-  display: flex;
-  position: sticky;
-  top: 0; 
-  max-width: 256px;
-  border-radius: 8px;
-}
-
-.sticker-container.showing-terms {
-  display: flex;
-  position: fixed;
-  left: 0;
-  width: 100%;
-  top: 0px;
-  max-width: 256px;
-  border-radius: 8px;
-} */
 
 .sticker-container {
-  display: flex;
-  position: sticky;
-  top: 0; 
-  max-width: 256px;
-  border-radius: 8px;
-}
-
-.sticker-container.showing-terms {
   position: fixed;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  max-width: 256px;
+  width: 256px;
+  max-height: calc(100vh - 50px);
+  overflow-y: auto;
   border-radius: 8px;
 }
 
@@ -307,16 +292,14 @@
   box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
     0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
   background-color: rgb(127, 190, 193);
-  position: sticky;
-  top: 0;
-  width: 100%;
   font-size: small;
-  margin: 0 !important;
   font-weight: 600;
   color: #fff;
-  max-height: 700px !important;
-  overflow-y: auto !important;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4) !important;
+  overflow-y: auto;
+}
+
+.lesson-button {
+  margin-top: 10px; /* Отступ сверху */
 }
 
 .tooltip-lesson p {
@@ -445,6 +428,14 @@
 
 /* quiz */
 
+.quiz-answer {
+  cursor: grab;
+}
+
+.drag-text-container {
+  margin-left: 100px;
+}
+
 .quiz-container {
   display: flex;
   gap: 25px;
@@ -454,7 +445,7 @@
 .quiz-text {
   text-align: justify;
   max-width: 850px;
-  line-height: 1.2 !important;
+
 }
 
 .quiz-container li {
@@ -469,9 +460,7 @@
   padding: 15px 0;
 }
 
-.quiz-answer {
-  padding: 2px !important;
-}
+
 
 /* .blank-space {
   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
@@ -605,7 +594,6 @@
 
   .sticker-container {
     position: fixed;
-    bottom: 0;
     z-index: 999;
     top: auto;
   }
@@ -654,7 +642,16 @@
   .forms li {
     display: list-item;
   }
-}
+
+  .reading-page {
+    padding: 0;
+
+    }
+    .reading-task {
+      padding: 0 10px;
+    }
+  }
+
 
 @media only screen and (max-width: 720px) {
   .MuiTabs-flexContainer {

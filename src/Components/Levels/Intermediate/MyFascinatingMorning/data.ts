@@ -1,4 +1,4 @@
-// data.ts
+
 const vocabularyData = {
   text: `
   The dawn of a new day brings _____ an opportunity to shape the hours ahead, 

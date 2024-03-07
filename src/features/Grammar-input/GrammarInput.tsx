@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button, ListItem, List } from '@mui/material';
-import { WordsGame } from '../Components/Levels/Intermediate/MyFascinatingMorning/GrammarMFM';
+import { WordsGame } from '../../Components/Levels/Intermediate/MyFascinatingMorning/GrammarMFM';
 import styled from 'styled-components';
 
 const StyledInput = styled.input`

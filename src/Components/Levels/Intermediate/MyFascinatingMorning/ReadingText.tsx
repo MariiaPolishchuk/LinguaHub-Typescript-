@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import Zoom from "@mui/material/Zoom";
 import { TransitionProps } from "@mui/material/transitions";
-import CustomTooltip from "../../../../Components/features/Tooltip-for-read/CustomTooltip";
+import CustomTooltip from "../../../../features/Tooltip-for-read/CustomTooltip";
 
 const ReadingText = () => {
   const hustleRef = useRef(null);

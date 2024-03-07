@@ -1,9 +1,19 @@
-import { combineReducers } from 'redux';
-import someReducer from './someReducer'; // Импортируем другие редукторы, если есть
+// rootReducer.ts
+const initialState = {
+  counter: 0
+};
 
-const rootReducer = combineReducers({
-  someSlice: someReducer,
-  // Другие редукторы, если есть
-});
+const rootReducer = (state = initialState, action: { type: any; }) => {
+  switch (action.type) {
+    case 'INCREMENT_COUNTER':
+      return {
+        ...state,
+        counter: state.counter + 1
+      };
+    default:
+      return state;
+  }
+};
 
 export default rootReducer;
+

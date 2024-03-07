@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 const useQuizLogic = (words: string[]) => {
   const [answers, setAnswers] = useState<string[]>([]);
@@ -24,7 +24,7 @@ const useQuizLogic = (words: string[]) => {
       styles.push(style);
     });
     setInitialStyles(styles);
-  }, []);
+  }, [words]); 
 
   const allowDrop = (event: React.DragEvent<HTMLDivElement>) => {
     event.preventDefault();
@@ -40,21 +40,26 @@ const useQuizLogic = (words: string[]) => {
       if (!wordToRestore) {
         draggedElement.innerText = data;
         draggedElement.classList.add("quiz-answer");
-        const dragItem = findDragItemByText(data);
+        const dragItem = findDragItemByText(data) as HTMLElement;
         if (dragItem) {
           dragItem.style.display = "none";
         }
       } else {
-        const prevDragItem = findDragItemByText(wordToRestore);
+        const prevDragItem = findDragItemByText(wordToRestore) as HTMLElement;
         if (prevDragItem) {
           prevDragItem.style.display = "block";
         }
         draggedElement.innerText = data;
-        const dragItem = findDragItemByText(data);
+        const dragItem = findDragItemByText(data) as HTMLElement;
         if (dragItem) {
           dragItem.style.display = "none";
         }
       }
+      setAnswers(prevAnswers => {
+        const updatedAnswers = [...prevAnswers];
+        updatedAnswers[index] = data;
+        return updatedAnswers;
+      });
     } else {
       draggedElement.classList.add("incorrect-quiz");
     }
@@ -69,7 +74,7 @@ const useQuizLogic = (words: string[]) => {
     answerSpans.forEach((span, index) => {
       span.classList.remove("correct-quiz", "incorrect-quiz");
       const userAnswer = span.textContent?.trim();
-      const correctAnswer = words[index]; // Assuming words are in correct order initially
+      const correctAnswer = words[index];
       if (userAnswer === correctAnswer) {
         span.classList.add("correct-quiz");
       } else {
@@ -83,17 +88,24 @@ const useQuizLogic = (words: string[]) => {
     answerSpans.forEach((span, index) => {
       span.textContent = "";
       if (initialStyles[index]) {
-        const spanElement = span as HTMLElement; // Explicitly type span as HTMLElement
+        const spanElement = span as HTMLElement;
         Object.assign(spanElement.style, initialStyles[index]);
       }
     });
+
+    const dragItems = document.querySelectorAll(".drag-item");
+    dragItems.forEach((item) => {
+      const dragItem = item as HTMLElement;
+      dragItem.style.display = "block";
+    });
+
     shuffleWords();
   };
 
   const showCorrectAnswers = () => {
     const answerSpans = document.querySelectorAll(".answer");
     answerSpans.forEach((answer, index) => {
-      answer.textContent = words[index]; // Displaying correct answers
+      answer.textContent = words[index];
     });
   };
 
@@ -119,6 +131,3 @@ const useQuizLogic = (words: string[]) => {
 };
 
 export default useQuizLogic;
-
-
-

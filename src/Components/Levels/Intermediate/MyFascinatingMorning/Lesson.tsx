@@ -1,18 +1,18 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Tabs, Tab, Button } from "@material-ui/core";
+import {  Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
-// import Breadcrumbs from "../../../Levels/Breadcrumbs"; 
+// import Breadcrumbs from "../../../Levels/Breadcrumbs";
 import ReadingText from "./ReadingText";
 import Test from "./Test";
 import Grammar from "./Grammar";
 import Listening from "./Listening";
-import useRandomQuestion from "../../../features/Random-questions-reading/UseRandomQuestions";
+import useRandomQuestion from "../../../../features/Random-questions-reading/UseRandomQuestions";
 import RandomQuestions from "./RandomQuestions";
 import "../../../../styles/Lessons.css";
 
 const Lesson: React.FC = () => {
   const navigate = useNavigate();
-  const [showStartButton, setShowStartButton] = useState(true);
+  const [, setShowStartButton] = useState(true);
   const [value, setValue] = useState(0);
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -44,34 +44,33 @@ const Lesson: React.FC = () => {
     }
   }, [isModalOpen]);
 
-
   const isSmallScreen = () => {
     return window.innerWidth < 600;
   };
 
   return (
     <div className="overall fade-in main-container-lessons" ref={modalRef}>
-      
+
       {/* <Breadcrumbs paths={[
         { label: "Intermediate", url: "/course/intermediate" },
         // { label: "My Fascinating Morning", url: "/course/intermediate/my-fascinating-morning" },
         { label: "My Fascinating Morning", url: "/course/intermediate/my-fascinating-morning/lesson" }
       ]} /> */}
 
-      <Tabs
+      {/* <Tabs
         className="lesson-tabs"
         value={value}
         onChange={handleChange}
         textColor="primary"
         indicatorColor="primary"
-        orientation={isSmallScreen() ? "vertical" : "horizontal"} 
-        variant="scrollable" 
+        orientation={isSmallScreen() ? "vertical" : "horizontal"}
+        variant="scrollable"
       >
         <Tab label="Reading" />
         <Tab label="Test" />
         <Tab label="Grammar" />
         <Tab label="Listening" />
-      </Tabs>
+      </Tabs> */}
 
       {value === 0 && (
         <>
@@ -126,7 +125,6 @@ const Lesson: React.FC = () => {
 };
 
 export default Lesson;
-
 
 
 
@@ -264,4 +262,3 @@ export default Lesson;
 // };
 
 // export default Lesson;
-

@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import TestForm from "../../../../Components/features/TestForm/TestForm";
-import Synonyms from "../../../features/Find-synonyms/Synonyms";
-import { synonyms, words } from "./SynonymsData";
-import VocabularyPractice from "../../../../Components/features/VocabularyDragText/VocabularyPractise";
-import vocabularyData from "./data";
-import Sticker from "../../../../Components/features/Tooltip-for-test/Sticker";
+import TestForm from "../../../../features/TestForm/TestForm";
+import Sticker from "../../../../features/Tooltip-for-test/Sticker";
 import terms from "./TermListData";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -106,8 +102,6 @@ const Test: React.FC = () => {
         </div>
         <div className="blocks">
           <TestForm questionsAndAnswers={questionsAndAnswers} />
-          {/* <DragDropMFM /> */}
-
           <Link
             className="lesson-link"
             onClick={handleStartDrag}
@@ -115,12 +109,6 @@ const Test: React.FC = () => {
           >
             Next &gt;
           </Link>
-
-          <Synonyms words={words} synonyms={synonyms} />
-          <VocabularyPractice
-            text={vocabularyData.text}
-            words={vocabularyData.words}
-          />
         </div>
       </div>
     </div>
@@ -128,3 +116,6 @@ const Test: React.FC = () => {
 };
 
 export default Test;
+
+
+

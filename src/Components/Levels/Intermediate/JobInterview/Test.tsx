@@ -1,7 +1,7 @@
 
 import React from "react";
-import TestForm from "../../../../Components/features/TestForm/TestForm";
-import Sticker from "../../../../Components/features/Tooltip-for-test/Sticker";
+import TestForm from "../../../../features/TestForm/TestForm";
+import Sticker from "../../../../features/Tooltip-for-test/Sticker";
 import terms from "./TermListData";
 import "../../../../styles/Test.css";
 import "../../../../styles/JobInterview.css";

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import DragDropForm from "../../../features/Drag-drop-sentences/DragDropForm";
+import DragDropForm from "../../../../features/Drag-drop-sentences/DragDropForm";
+import { Link, useNavigate } from "react-router-dom";
 
 interface Sentence {
   id: string;
@@ -51,7 +52,7 @@ const DragDropMFM: React.FC = () => {
 
   useEffect(() => {
     if (resetFlag) {
-      setWordsData(initialWordsData); // Сбрасываем список слов
+      setWordsData(initialWordsData);
       setResetFlag(false);
     }
   }, [resetFlag]);
@@ -64,15 +65,32 @@ const DragDropMFM: React.FC = () => {
     setResetFlag(true);
   };
 
+  const navigate = useNavigate();
+  const [showStartButton, setShowStartButton] = useState(true);
+  const [] = useState(0);
+
+  const handleStartVoc = () => {
+    setShowStartButton(false);
+    navigate("/course/intermediate/my-fascinating-morning/lesson/voc-practise");
+  };
+
   return (
     <div>
-      <h4>Drag words into the right gaps!</h4>
       <DragDropForm
         sentences={sentencesData}
         words={wordsData}
         onWordMove={handleWordMove}
         resetGame={resetGame}
       />
+      <div className="choose-buttons">
+        <Link
+          className="lesson-link"
+          onClick={handleStartVoc}
+          to="/course/intermediate/my-fascinating-morning/lesson/voc-practise"
+        >
+          Next &gt;
+        </Link>
+      </div>
     </div>
   );
 };

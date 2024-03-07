@@ -53,7 +53,7 @@ const Synonyms: React.FC<Props> = ({ words, synonyms }) => {
   };
 
   return (
-    <div className="synonyms-cont">
+    <div className="synonyms-cont block">
       <div className="block-name">
         <h3>Vocabulary Practice</h3>
         <h4>

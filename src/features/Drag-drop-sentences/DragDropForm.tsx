@@ -97,14 +97,11 @@ const DragDropForm: React.FC<DragDropFormProps> = ({
   };
 
   return (
-    <div className="all-sentences-container">
+    <div className="block drag-text-container">
       <div className="block-name dotted">
-        <h3>Listening Practice</h3>
+        <h3>Vocabulary Practise</h3>
         <h4>
-          Now we are going to practice your listening skills. During this audio
-          will be playing you will see the questions. After each answer tick the
-          submit button to check yourself. Audio won't be playing without
-          answer!
+          Drag words into the right gaps!
         </h4>
       </div>
       <div className="drag-game-cont">
@@ -196,7 +193,7 @@ const DragDropForm: React.FC<DragDropFormProps> = ({
           </Droppable>
         </DragDropContext>
       </div>
-      <div className="button-cont">
+      <div className="choose-buttons">
         <Button
           className="lesson-button"
           variant="contained"

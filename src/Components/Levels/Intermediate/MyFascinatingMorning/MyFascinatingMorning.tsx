@@ -6,6 +6,12 @@ import Listening from "./Listening";
 import Lesson from "./Lesson";
 import "../../../../styles/LessonDescription.css";
 import DragDropMFM from "./DragDropMFM";
+import Layout from "./Tabs/Layout";
+import Synonyms from "../../../../features/Find-synonyms/Synonyms";
+import { synonyms, words } from "./SynonymsData";
+import VocabularyPractice from "../../../../features/VocabularyDragText/VocabularyPractise";
+import vocabularyData from "./data";
+import VocabularyPracticePage from "./VocabularyPracticePage";
 
 const MyFascinatingMorning: React.FC = () => {
   const navigate = useNavigate();
@@ -22,7 +28,7 @@ const MyFascinatingMorning: React.FC = () => {
         {/* <img className="lesson-name-icon" src="/src/assets/images/icons/dd.png" alt="" /> */}
         <h2 className="lesson-name">MyFascinatingMorning</h2>
         <Link className="back-link" to="/course/intermediate">
-          &lt;Back
+          &lt;Topics
         </Link>
       </div>
       {showStartButton && (
@@ -57,13 +63,28 @@ const MyFascinatingMorning: React.FC = () => {
       )}
       {!showStartButton && (
         <>
-          <Routes>
-            <Route path="/lesson/" element={<Lesson />} />
-            <Route path="/lesson/test" element={<Test />} />
-            <Route path="/lesson/drag-drop" element={<DragDropMFM />} />
-            <Route path="/lesson/grammar" element={<Grammar />} />
-            <Route path="/lesson/listening" element={<Listening />} />
-          </Routes>
+          <Layout>
+            <Routes>
+              <Route path="/lesson/" element={<Lesson />} />
+              <Route path="/lesson/test" element={<Test />} />
+              <Route path="/lesson/drag-drop" element={<DragDropMFM />} />
+              <Route
+                path="/lesson/find-synonyms"
+                element={<Synonyms words={words} synonyms={synonyms} />}
+              />
+              <Route
+                path="/lesson/voc-practise"
+                element={
+                  <VocabularyPracticePage
+                    text={vocabularyData.text}
+                    words={vocabularyData.words}
+                  />
+                }
+              ></Route>
+              <Route path="/lesson/grammar" element={<Grammar />} />
+              <Route path="/lesson/listening" element={<Listening />} />
+            </Routes>
+          </Layout>
         </>
       )}
     </div>

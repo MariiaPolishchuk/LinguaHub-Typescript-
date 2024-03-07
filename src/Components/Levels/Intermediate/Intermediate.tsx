@@ -21,9 +21,9 @@ const Intermediate: React.FC = () => {
           {selectedLesson && (
             <span>
               {selectedLesson === "my-fascinating-morning" ? (
-                <Link to="/course/intermediate/my-fascinating-morning">My Fascinating Morning</Link>
+                <Link to="/course/intermediate/my-fascinating-morning/lesson">My Fascinating Morning</Link>
               ) : selectedLesson === "jobinterview" ? (
-                <Link to="/course/intermediate/jobinterview">Job Interview</Link>
+                <Link to="/course/intermediate/jobinterview/lesson">Job Interview</Link>
               ) : null}
             </span>
           )}

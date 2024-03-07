@@ -72,8 +72,6 @@ body {
   margin-top: 95px;
 }
 
-
-
 .fade-in {
   opacity: 0;
   animation: fadeIn ease-in-out 1;
@@ -106,38 +104,43 @@ body {
   }
 }
 
-
 .button-cont {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+.choose-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .lesson-button {
-  background-color: #57b4c0 !important;
+  background-color: #010202 !important;
   margin: 20px !important;
   color: white !important;
 }
 
 .text {
-  opacity: 0; 
+  opacity: 0;
   animation: slideInFromLeft 3s ease-in-out forwards;
   font-weight: 500;
 }
 
 .fast-text {
-  opacity: 0; 
+  opacity: 0;
   animation: slideInFromLeft 0.5s ease-in-out forwards;
   font-weight: 500;
 }
 
 @keyframes slideInFromLeft {
   0% {
-    opacity: 0; 
+    opacity: 0;
     transform: translateX(-100%);
   }
   100% {
-    opacity: 1; 
+    opacity: 1;
     transform: translateX(0);
   }
 }
@@ -188,19 +191,20 @@ a {
   font-weight: 800;
 }
 
-
-
-
-
 h3 {
-  background: radial-gradient(circle farthest-corner at 100px 50px, #94c8cb, #1597a7c9);
+  background: radial-gradient(
+    circle farthest-corner at 100px 50px,
+    #94c8cb,
+    #1597a7c9
+  );
   padding: 20px;
   border-radius: 5px;
   color: #083643;
   font-weight: 900;
-
+  margin: 0;
   text-shadow: 2px 2px 2px #08364352 !important;
-  box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
 }
 @media (max-width: 1250px) {
 }
@@ -226,7 +230,6 @@ h3 {
 
   .levels {
     width: unset;
-    padding: 130px 0px;
   }
 }
 
