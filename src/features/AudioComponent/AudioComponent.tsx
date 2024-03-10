@@ -191,7 +191,6 @@ const AudioComponent: React.FC<AudioProps> = ({ audioFile, questions }) => {
   return (
     <div className="task block">
       <div className="block-name dotted">
-        <h3>Listening Practice</h3>
       </div>
       <div className="audio-task">
         <h4>
@@ -247,7 +246,7 @@ const AudioComponent: React.FC<AudioProps> = ({ audioFile, questions }) => {
             </Button>
           </div>
         </Modal>
-        <Box id="audioResults"></Box>
+        <Box className="fade-in" id="audioResults"></Box>
       </Box>
     </div>
   );

@@ -1,4 +1,3 @@
-// Layout.tsx
 import React from "react";
 import { Tabs, Tab } from "@material-ui/core";
 import { Link } from "react-router-dom";
@@ -24,7 +23,7 @@ const Layout: React.FC = ({ children }) => {
           to="/course/intermediate/my-fascinating-morning/lesson"
         />
         <Tab
-          label="Test"
+          label="Vocabulary"
           component={Link}
           to="/course/intermediate/my-fascinating-morning/lesson/test"
         />

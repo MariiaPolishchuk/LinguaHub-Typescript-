@@ -31,7 +31,7 @@ const TestForm: React.FC<TestFormProps> = ({ questionsAndAnswers }) => {
 
   return (
     <div className="test-form">
-      <h3>Choose option!</h3>
+      {/* <h3>Choose option!</h3> */}
       <h4>
         Sure, you are ready with Quizlet! So, it's time to practice and add some
         knowledge to your mind! Choose the correct word for each definition and
@@ -59,33 +59,33 @@ const TestForm: React.FC<TestFormProps> = ({ questionsAndAnswers }) => {
                 ))}
               </select>
               {results[index] !== null && (
-              <div>
-              <p>
-                {results[index]
-                  ? "Correct"
-                  : `Incorrect. Correct is ${questionsAndAnswers[index].correctAnswer}`}
-              </p>
-              </div>
-            )}
+                <div>
+                  <p>
+                    {results[index]
+                      ? "Correct"
+                      : `Incorrect. Correct is ${questionsAndAnswers[index].correctAnswer}`}
+                  </p>
+                </div>
+              )}
             </div>
           </li>
         ))}
       </ul>
-<div className="choose-buttons">
-      <Button
-        className="lesson-button"
-        variant="contained"
-        onClick={checkAnswers}
-      >
-        Check Answers
-      </Button>
-      <Button
-        className="lesson-button"
-        variant="contained"
-        onClick={resetAnswers}
-      >
-        Start again
-      </Button>
+      <div className="choose-buttons">
+        <Button
+          className="lesson-button"
+          variant="contained"
+          onClick={checkAnswers}
+        >
+          Check Answers
+        </Button>
+        <Button
+          className="lesson-button"
+          variant="contained"
+          onClick={resetAnswers}
+        >
+          Try again
+        </Button>
       </div>
     </div>
   );

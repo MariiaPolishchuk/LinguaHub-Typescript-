@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Typography, List, ListItem, Button } from "@mui/material";
 import useQuizLogic from "./useQuizLogic";
 import BlankSpace from "./BlankSpace";
-import "../../styles/QuizText.css"
+import "../../styles/QuizText.css";
 
 interface VocabularyPracticeProps {
   text: string;
@@ -13,17 +13,27 @@ const VocabularyPractice: React.FC<VocabularyPracticeProps> = ({
   text,
   words,
 }) => {
-  const { drop, allowDrop, drag, checkQuizAnswers, resetQuiz, showCorrectAnswers } = useQuizLogic(words);
-  const [answers, setAnswers] = useState<string[]>(Array.from({ length: words.length }, () => ""));
+  const { drop, drag, checkQuizAnswers, resetQuiz, showCorrectAnswers } =
+    useQuizLogic(words);
+  const [answers, setAnswers] = useState<string[]>(
+    Array.from({ length: words.length }, () => "")
+  );
 
-  const handleDragStart = (event: React.DragEvent<HTMLDivElement>, word: string, index: number) => {
+  const handleDragStart = (
+    event: React.DragEvent<HTMLDivElement>,
+    word: string,
+    index: number
+  ) => {
     event.dataTransfer.setData("text", word);
     event.dataTransfer.effectAllowed = "move";
     // Save the index of the dragged word
     event.dataTransfer.setData("index", index.toString());
   };
 
-  const handleDrop = (event: React.DragEvent<HTMLDivElement>, index: number) => {
+  const handleDrop = (
+    event: React.DragEvent<HTMLDivElement>,
+    index: number
+  ) => {
     event.preventDefault();
     const data = event.dataTransfer.getData("text");
     drop(event, index);
@@ -41,12 +51,8 @@ const VocabularyPractice: React.FC<VocabularyPracticeProps> = ({
     <div className="drag-words">
       <div>
         <div className="block-name dotted">
-          <h3>Vocabulary Practice</h3>
           <h4>
-            Complete the sentences by dragging words into the gaps. Do not drag
-            words you have already put into the gap to another gap. Just move
-            the word from your list to the word that is already in the blank,
-            and the previous word will return! Don't forget to check your
+            Complete the sentences by dragging words into the gaps! Don't forget to check your
             answers!
           </h4>
         </div>
@@ -68,7 +74,11 @@ const VocabularyPractice: React.FC<VocabularyPracticeProps> = ({
                           event.preventDefault()
                         }
                         onDragStart={(event: React.DragEvent<HTMLDivElement>) =>
-                          handleDragStart(event, answers[(index + 1) / 2] || "", (index + 1) / 2)
+                          handleDragStart(
+                            event,
+                            answers[(index + 1) / 2] || "",
+                            (index + 1) / 2
+                          )
                         }
                       />
                     );
@@ -80,19 +90,18 @@ const VocabularyPractice: React.FC<VocabularyPracticeProps> = ({
             </ListItem>
           </List>
           <div className="drag-container" id="drag-container">
-          {words.map((word, index) => (
-  <div
-    key={index}
-    className="drag-item"
-    draggable={true}
-    onDragStart={(event: React.DragEvent<HTMLDivElement>) =>
-      handleDragStart(event, word, index)
-    }
-  >
-    {word}
-  </div>
-))}
-
+            {words.map((word, index) => (
+              <div
+                key={index}
+                className="drag-item"
+                draggable={true}
+                onDragStart={(event: React.DragEvent<HTMLDivElement>) =>
+                  handleDragStart(event, word, index)
+                }
+              >
+                {word}
+              </div>
+            ))}
           </div>
         </div>
         <div className="choose-buttons">

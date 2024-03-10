@@ -7,9 +7,7 @@ import Lesson from "./Lesson";
 import "../../../../styles/LessonDescription.css";
 import DragDropMFM from "./DragDropMFM";
 import Layout from "./Tabs/Layout";
-import Synonyms from "../../../../features/Find-synonyms/Synonyms";
-import { synonyms, words } from "./SynonymsData";
-import VocabularyPractice from "../../../../features/VocabularyDragText/VocabularyPractise";
+import SynonymsPage from "./SynonymsPage";
 import vocabularyData from "./data";
 import VocabularyPracticePage from "./VocabularyPracticePage";
 
@@ -67,13 +65,12 @@ const MyFascinatingMorning: React.FC = () => {
             <Routes>
               <Route path="/lesson/" element={<Lesson />} />
               <Route path="/lesson/test" element={<Test />} />
-              <Route path="/lesson/drag-drop" element={<DragDropMFM />} />
+              <Route path="/lesson/test/:pageNumber" element={<Test />} />
+
+              <Route path="/lesson/test/drag-drop" element={<DragDropMFM />} />
+              <Route path="/lesson/test/find-synonyms" element={<SynonymsPage />} />
               <Route
-                path="/lesson/find-synonyms"
-                element={<Synonyms words={words} synonyms={synonyms} />}
-              />
-              <Route
-                path="/lesson/voc-practise"
+                path="/lesson/test/voc-practise"
                 element={
                   <VocabularyPracticePage
                     text={vocabularyData.text}

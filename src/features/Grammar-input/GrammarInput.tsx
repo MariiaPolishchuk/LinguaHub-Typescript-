@@ -119,7 +119,6 @@ const GrammarInput: React.FC<Props> = ({ game }) => {
   return (
     <div className="quiz block" id="quiz">
       <div className="block-name dotted">
-        <h3>Grammar Practice</h3>
         <h4>Write the correct form of the verbs in brackets and check your answers! Don't forget this topic refers to the Present Tenses! So use the Present Simple, Continuous, Perfect and Perfect-Continuous!</h4>
       </div>
       <List className='quiz-list forms'>

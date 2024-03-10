@@ -1,18 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import TestForm from "../../../../features/TestForm/TestForm";
 import Sticker from "../../../../features/Tooltip-for-test/Sticker";
 import terms from "./TermListData";
-import { Link, useNavigate } from "react-router-dom";
+import LessonPagination from "./Pagination/LessonPagination";
 
 const Test: React.FC = () => {
+  const { page } = useParams();
   const navigate = useNavigate();
-  const [showStartButton, setShowStartButton] = useState(true);
-  const [] = useState(0);
-
-  const handleStartDrag = () => {
-    setShowStartButton(false);
-    navigate("/course/intermediate/my-fascinating-morning/lesson/drag-drop");
-  };
+  const [currentPage, setCurrentPage] = useState(parseInt(page || "1"));
 
   const questionsAndAnswers = [
     {
@@ -94,21 +90,42 @@ const Test: React.FC = () => {
     },
   ];
 
+  const totalPages = 4;
+
+  const goToPage = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+    let path = `/course/intermediate/my-fascinating-morning/lesson/test/${pageNumber}`;
+    navigate(path);
+  };
+
+  useEffect(() => {
+    setCurrentPage(currentPage);
+  }, [currentPage]);
+
+  useEffect(() => {
+    setCurrentPage(parseInt(window.location.pathname.split("/").pop() || "1"));
+  }, []);
+
   return (
     <div>
+       <div className="pagination-cont">
+          <LessonPagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            goToPage={goToPage}
+          />
+        </div>
       <div className="lesson-block">
         <div className="sticker-container">
           <Sticker terms={terms} />
         </div>
         <div className="blocks">
           <TestForm questionsAndAnswers={questionsAndAnswers} />
-          <Link
-            className="lesson-link"
-            onClick={handleStartDrag}
-            to="/course/intermediate/my-fascinating-morning/lesson/drag-drop"
-          >
-            Next &gt;
-          </Link>
+          <LessonPagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            goToPage={goToPage}
+          />
         </div>
       </div>
     </div>
@@ -116,6 +133,3 @@ const Test: React.FC = () => {
 };
 
 export default Test;
-
-
-

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import {  Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
-// import Breadcrumbs from "../../../Levels/Breadcrumbs";
 import ReadingText from "./ReadingText";
 import Test from "./Test";
 import Grammar from "./Grammar";
@@ -50,28 +49,6 @@ const Lesson: React.FC = () => {
 
   return (
     <div className="overall fade-in main-container-lessons" ref={modalRef}>
-
-      {/* <Breadcrumbs paths={[
-        { label: "Intermediate", url: "/course/intermediate" },
-        // { label: "My Fascinating Morning", url: "/course/intermediate/my-fascinating-morning" },
-        { label: "My Fascinating Morning", url: "/course/intermediate/my-fascinating-morning/lesson" }
-      ]} /> */}
-
-      {/* <Tabs
-        className="lesson-tabs"
-        value={value}
-        onChange={handleChange}
-        textColor="primary"
-        indicatorColor="primary"
-        orientation={isSmallScreen() ? "vertical" : "horizontal"}
-        variant="scrollable"
-      >
-        <Tab label="Reading" />
-        <Tab label="Test" />
-        <Tab label="Grammar" />
-        <Tab label="Listening" />
-      </Tabs> */}
-
       {value === 0 && (
         <>
           <div className="reading-container">
@@ -97,9 +74,7 @@ const Lesson: React.FC = () => {
           {isModalOpen && (
             <div className="modal-container fade-in-fast" ref={modalRef}>
               <div className="modal-content">
-                <div className="modal-header">
-                  {/* <Button onClick={toggleModal}>Close</Button> */}
-                </div>
+                <div className="modal-header"></div>
                 <div className="modal-body">
                   {outputText && (
                     <p className="random-questions text fade-in-fast">
@@ -136,6 +111,31 @@ export default Lesson;
 
 
 
+
+
+
+// breadcrumbs
+
+{/* <Breadcrumbs paths={[
+        { label: "Intermediate", url: "/course/intermediate" },
+        // { label: "My Fascinating Morning", url: "/course/intermediate/my-fascinating-morning" },
+        { label: "My Fascinating Morning", url: "/course/intermediate/my-fascinating-morning/lesson" }
+      ]} /> */}
+
+      {/* <Tabs
+        className="lesson-tabs"
+        value={value}
+        onChange={handleChange}
+        textColor="primary"
+        indicatorColor="primary"
+        orientation={isSmallScreen() ? "vertical" : "horizontal"}
+        variant="scrollable"
+      >
+        <Tab label="Reading" />
+        <Tab label="Test" />
+        <Tab label="Grammar" />
+        <Tab label="Listening" />
+      </Tabs> */}
 
 
 

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import VocabularyPractice from "../../../../features/VocabularyDragText/VocabularyPractise";
 import Sticker from "../../../../features/Tooltip-for-test/Sticker";
 import terms from "./TermListData";
+import LessonPagination from "./Pagination/LessonPagination";
 
 const VocabularyPracticePage = ({
   text,
@@ -11,34 +11,35 @@ const VocabularyPracticePage = ({
   text: string;
   words: string[];
 }) => {
-  const navigate = useNavigate();
-  const [showStartButton, setShowStartButton] = useState(true);
+  const [currentPage, setCurrentPage] = useState(4);
+  const totalPages = 4;
 
-  const handleStartSynonyms = () => {
-    setShowStartButton(false);
-    navigate(
-      "/course/intermediate/my-fascinating-morning/lesson/find-synonyms"
-    );
+  const goToPage = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
   };
 
   return (
     <div>
+      <div className="pagination-cont">
+        <LessonPagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          goToPage={goToPage}
+        />
+      </div>
+
       <div className="lesson-block">
         <div className="sticker-container">
           <Sticker terms={terms} />
         </div>
         <div className="blocks">
           <VocabularyPractice text={text} words={words} />
-          <div className="choose-buttons">
-          <Link
-          className="lesson-link"
-          onClick={handleStartSynonyms}
-          to="/course/intermediate/my-fascinating-morning/lesson/find-synonyms"
-        >
-          Next &gt;
-        </Link>
-          </div>
-         
+
+          <LessonPagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            goToPage={goToPage}
+          />
         </div>
       </div>
     </div>

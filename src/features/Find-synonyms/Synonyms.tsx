@@ -53,12 +53,11 @@ const Synonyms: React.FC<Props> = ({ words, synonyms }) => {
   };
 
   return (
-    <div className="synonyms-cont block">
+    <div className="synonyms-cont">
       <div className="block-name">
-        <h3>Vocabulary Practice</h3>
         <h4>
-          Look at these words! First, translate and find each meaning! Then, try
-          to find synonyms for each word and check your answers!
+          Look at these words! Here we have two colums. Each column contains one synonym! First, translate and find each meaning! Then, try
+          to find synonyms, drag it across and check your answers!
         </h4>
       </div>
       <div className="word-synonyms-container">

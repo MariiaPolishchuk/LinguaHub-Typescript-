@@ -14,15 +14,17 @@
 
 .description-text {
   max-width: 375px;
+  margin-top: 70px;
 }
 
 .description-text p {
-  background: #ffffff5c;
+  background: #69abbc61;
   color: #2a2a1c;
   padding: 15px;
   border-radius: 10px;
   /* height: 40px; */
-  box-shadow: 7px 8px 1px -2px rgb(0 0 0 / 11%), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  /* box-shadow: 7px 8px 1px -2px rgb(0 0 0 / 11%), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12); */
+  box-shadow: 7px 8px 9px -2px #3a5961, 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
 .descr-img {
@@ -38,8 +40,7 @@
 
 .lesson-link {
     color: black;
-    font-family: "Montserrat", sans-serif;
-    font-size: x-large;
+    font-size: large;
     padding: 20px 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -47,8 +48,7 @@
 .lesson-link:hover {
   text-shadow: 2px 2px 2px #4e4e4e !important;
   transition: all 0.3s ease-in-out;
-  color: aliceblue;
-  font-size: x-large;
+  color: rgba(240, 248, 255, 0.783);
 }
 
 .arrow-bold {
