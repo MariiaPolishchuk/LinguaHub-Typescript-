@@ -1,35 +1,24 @@
-// BeginnerTopics.jsx
-import React from 'react';
-import { useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-// import BeginnerTopic1 from './BeginnerTopic1';
-// Импортируйте другие темы по аналогии
+import React from "react";
+import { Link } from "react-router-dom";
+import levelImage from "../../../assets/images/Beginner/A1.png"
+import lessonImage from "../../../assets/images/Beginner/CharacterTraitsIcon.png";
+import "../../../styles/LessonsList.css"
 
-const BeginnerTopics = () => {
-  const [showTopics, setShowTopics] = useState(true);
-
-  const handleTopicClick = () => {
-    setShowTopics(false);
-  };
-
+const IntermediateTopics: React.FC = () => {
   return (
-
-    <div>
-        {showTopics && (
-            <>
-                <h2>Topics</h2>
-                <ul>
-                    <li><Link to="topic1" onClick={handleTopicClick}>Topic 1</Link></li>
-                    {/* Добавьте другие темы по аналогии */}
-                </ul>
-            </>
-        )}
-        <Routes>
-            {/* <Route path="topic1" element={<BeginnerTopic1 />} /> */}
-            {/* Добавьте другие темы по аналогии */}
-        </Routes>
+    <div className="topics">
+      <div className="level-name">
+      <img className="level-image" src={levelImage} alt="level" />
+      <h2> Beginner Topics</h2>
+      </div>
+     
+      <div className="topic-list">
+        <Link to="character-traits">
+          <img className="lessons-list-item" src={lessonImage} alt="Character Traits" />
+        </Link>
+      </div>
     </div>
   );
 };
 
-export default BeginnerTopics;
+export default IntermediateTopics;

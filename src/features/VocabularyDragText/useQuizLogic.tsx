@@ -131,3 +131,6 @@ const useQuizLogic = (words: string[]) => {
 };
 
 export default useQuizLogic;
+
+
+

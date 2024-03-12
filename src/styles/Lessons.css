@@ -389,6 +389,7 @@
 
 .word-synonyms-container {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   gap: 40px;
   justify-content: center;
@@ -397,9 +398,20 @@
 .synonyms-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 28px;
   padding: 5px;
   list-style: none;
+}
+
+.list-item {
+  margin: 1px;
+  text-wrap: nowrap;
+  padding: 8px !important;
+  border-radius: 5px;
+  cursor: grab;
+  background-color: #93c0bf !important;
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12) !important;
+  color: #fff;
 }
 
 .word-list {
@@ -407,6 +419,11 @@
 }
 
 /* quiz */
+
+.sentences-container {
+  max-height: 610px;
+  overflow-y: auto;
+}
 
 .quiz-answer {
   cursor: grab;
@@ -451,12 +468,17 @@
 .blank-space {
   display: inline-block;
   min-width: 50px; /* Задайте желаемую ширину пропуска */
-  height: 15px; /* Задайте желаемую высоту пропуска */
-  background-color: #f0f0f0; /* Цвет фона для пропуска */
-  border: 1px solid #ccc; /* Рамка для пропуска */
-  margin: 0 5px; /* Отступы между пропусками */
-  vertical-align: middle; /* Выравнивание пропусков по вертикали */
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  vertical-align: middle;
   text-align: center;
+  height: 25px !important;
+  background-color: #94c8cb45;
+  border-radius: 4px;
+  margin: 1px 4px;
+  padding: 1px 8px;
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
 }
 
 .answer {
@@ -523,6 +545,10 @@
 }
 
 @media only screen and (max-width: 1200px) {
+  .drag-game-cont {
+    gap: 10px;
+  }
+
   .quiz-container ul {
     max-height: 700px;
     overflow-y: auto;

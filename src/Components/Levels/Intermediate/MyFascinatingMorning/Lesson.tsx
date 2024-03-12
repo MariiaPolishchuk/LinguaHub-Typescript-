@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
-import ReadingText from "./ReadingText";
-import Test from "./Test";
-import Grammar from "./Grammar";
-import Listening from "./Listening";
+import ReadingText from "./ReadingPage/ReadingText";
+import Test from "./TestPage/Test";
+import Grammar from "./GrammarPage/GrammarPage";
+import Listening from "./ListeningPage/Listening";
 import useRandomQuestion from "../../../../features/Random-questions-reading/UseRandomQuestions";
-import RandomQuestions from "./RandomQuestions";
+import RandomQuestions from "./ReadingPage/RandomQuestions";
 import "../../../../styles/Lessons.css";
 
 const Lesson: React.FC = () => {

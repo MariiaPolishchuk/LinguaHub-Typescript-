@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import { Link, Routes, Route, useNavigate } from "react-router-dom";
-import Test from "./Test";
-import Grammar from "./Grammar";
-import Listening from "./Listening";
+import Test from "./TestPage/Test";
+import Grammar from "./GrammarPage/GrammarPage";
+import Listening from "./ListeningPage/Listening";
 import Lesson from "./Lesson";
 import "../../../../styles/LessonDescription.css";
-import DragDropMFM from "./DragDropMFM";
+import DragDropMFM from "./DragSentences/DragDropMFM";
 import Layout from "./Tabs/Layout";
-import SynonymsPage from "./SynonymsPage";
-import vocabularyData from "./data";
+import SynonymsPage from "./SynonymsPage/SynonymsPage";
 import VocabularyPracticePage from "./VocabularyPracticePage";
 
 const MyFascinatingMorning: React.FC = () => {
@@ -66,17 +65,15 @@ const MyFascinatingMorning: React.FC = () => {
               <Route path="/lesson/" element={<Lesson />} />
               <Route path="/lesson/test" element={<Test />} />
               <Route path="/lesson/test/:pageNumber" element={<Test />} />
-
               <Route path="/lesson/test/drag-drop" element={<DragDropMFM />} />
-              <Route path="/lesson/test/find-synonyms" element={<SynonymsPage />} />
+              <Route
+                path="/lesson/test/find-synonyms"
+                element={<SynonymsPage />}
+              />
+
               <Route
                 path="/lesson/test/voc-practise"
-                element={
-                  <VocabularyPracticePage
-                    text={vocabularyData.text}
-                    words={vocabularyData.words}
-                  />
-                }
+                element={<VocabularyPracticePage />}
               ></Route>
               <Route path="/lesson/grammar" element={<Grammar />} />
               <Route path="/lesson/listening" element={<Listening />} />
