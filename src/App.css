@@ -69,7 +69,7 @@ body {
 .levels {
   width: 100%;
   min-height: calc(85vh - 64px);
-  margin-top: 95px;
+  margin-top: 75px;
 }
 
 .fade-in {
@@ -250,6 +250,7 @@ h4 {
 
   .levels {
     width: unset;
+    margin-top: 68px;
   }
 }
 
