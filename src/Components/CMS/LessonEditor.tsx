@@ -3,7 +3,7 @@ import { Lesson } from "./types";
 
 
 interface LessonEditorProps {
-    onSaveLesson: (lesson: Lesson) => void; // Изменение типа параметра
+    onSaveLesson: (lesson: Lesson) => void; 
 }
 
 const LessonEditor: React.FC<LessonEditorProps> = ({ onSaveLesson }) => {
@@ -33,7 +33,7 @@ const LessonEditor: React.FC<LessonEditorProps> = ({ onSaveLesson }) => {
 
     return (
         <div>
-            <h3>Add Lesson Details </h3>
+            <h3>2. Add Lesson Details/lesson page </h3>
             <label htmlFor="lessonTitle">Lesson Title:</label>
             <input
                 type="text"
@@ -57,7 +57,10 @@ const LessonEditor: React.FC<LessonEditorProps> = ({ onSaveLesson }) => {
                 onChange={(e) => setLessonImage(e.target.value)}
             />
             <br />
+            <div className="cms-buttons">
             <button onClick={handleSaveLesson}>Save Lesson</button>
+            </div>
+            
         </div>
     );
 };

@@ -1,35 +1,113 @@
 .admin-border {
-    margin-top: 75px;
-    min-height: calc(90vh - 64px);
+  margin-top: 75px;
+  min-height: calc(90vh - 64px);
 }
 
 .cms-sidebar {
-    margin-top: 50px;
+  margin-top: 50px;
 }
 
 .add-lesson {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .modal-content-cms {
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    color: #083643;
-    font-weight: 900;
-    margin: 20px !important;
-    text-shadow: 2px 2px 2px #08364352 !important;
-    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  color: #083643;
+  font-weight: 900;
+  margin: 20px !important;
+  text-shadow: 2px 2px 2px #08364352 !important;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.close {
+  cursor: pointer;
 }
 
 .image-list {
-    display: grid;
-    justify-items: center;
-    gap: 20px;
-    padding: 10px;
-    grid-template-columns: repeat(5, 1fr);
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  padding: 10px;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .image-list-item {
-    width: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* styles.css */
+
+.admin-border .back-link {
+  padding: 0;
+}
+
+.cms-form {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  max-width: 400px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.cms-form h3 {
+  margin-top: 0;
+  padding: 10px;
+  margin: 20px 0;
+  background: radial-gradient(
+    circle farthest-corner at 100px 50px,
+    #027bff,
+    #1976d2ab
+  );
+  color: #fff;
+  font-weight: 500;
+  text-shadow: 2px 2px 2px #03101452 !important;
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.cms-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.cms-form select,
+.cms-form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.cms-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.cms-form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cms-form button:hover {
+  background-color: #0056b3;
+}
+
+textarea {
+  width: 394px;
+  height: 63px;
 }

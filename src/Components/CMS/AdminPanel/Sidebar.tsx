@@ -20,6 +20,13 @@ const Sidebar: React.FC = () => {
       }}
     >
       <List>
+      <ListItem button component={Link} to="/">
+          <ListItemText className="back-link" primary="< Home Page" />
+        </ListItem>
+        
+        <ListItem button component={Link} to="/admin-panel/my-lessons">
+          <ListItemText primary="My Lessons" />
+        </ListItem>
         <ListItem button component={Link} to="/admin-panel/edit">
           <ListItemText primary="Edit Existing Lessons" />
         </ListItem>

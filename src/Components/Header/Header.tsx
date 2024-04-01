@@ -82,7 +82,8 @@ const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
     setIsUserMenuOpen(false);
   };
 
-  const isAdmin = isAuthenticated && auth0User?.email === "mpolishchuk9106@gmail.com";
+  const isAdmin = isAuthenticated && (auth0User?.email === "mpolishchuk9106@gmail.com" || auth0User?.email === "rovenskyioleg7@gmail.com");
+
 
   return (
     <header className={`header ${!visible ?  "out" : ""}`}  role="banner">

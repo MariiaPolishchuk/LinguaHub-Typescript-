@@ -48,8 +48,8 @@ const CMSForm: React.FC<CMSFormProps> = ({
     };
 
     return (
-        <div>
-            <h3>Add New Lesson</h3>
+        <div className="cms-form">
+            <h3>1. Add New Lesson/list</h3>
             <label htmlFor="level">Select Level:</label>
             <select
                 id="level"
@@ -86,8 +86,10 @@ const CMSForm: React.FC<CMSFormProps> = ({
                 ))}
             </select>
             <br />
+            <div className="cms-buttons">
             <button onClick={() => setIsModalOpen(true)}>Select Image</button>
             <button onClick={handleAddLesson}>Add Lesson</button>
+            </div>
             {showSuccessMessage && <p>Lesson successfully added!</p>}
             <Modal 
                 imageList={imageList}

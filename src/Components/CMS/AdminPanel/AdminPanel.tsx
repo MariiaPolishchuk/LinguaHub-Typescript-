@@ -41,7 +41,6 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ levels }) => {
                 </Grid>
                 <Grid item xs={10}>
                     <div className="add-lesson">
-                        <h2>Admin Panel</h2>
                         <CMSForm
                             levels={levels}
                             imageList={imageList}
@@ -53,13 +52,14 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ levels }) => {
                             isOpen={isModalOpen}
                             closeModal={() => setIsModalOpen(false)}
                         />
-                        <h3>MyLessons:</h3>
-                        <LessonList lessons={lessons} />
+                        {/* <h3>MyLessons:</h3>
+                        <LessonList lessons={lessons} /> */}
                     </div>
                 </Grid>
             </Grid>
             <Routes>
               <Route path="/admin-panel/edit" element= {<EditLessonsPage lessons={lessons} />} ></Route>
+              <Route path="/admin-panel/my-lessons" element= {<LessonList lessons={lessons} />} ></Route>
             </Routes>
         </div>
     );
