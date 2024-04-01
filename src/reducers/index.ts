@@ -1,10 +1,10 @@
-// reducers.ts
+
 import { combineReducers } from 'redux';
-import rootReducer from './rootReducer'; // Импортируйте корневой редьюсер
+import rootReducer from './rootReducer'; 
 
 const reducers = combineReducers({
   rootReducer,
-  // Другие редьюсеры...
+
 });
 
 export default reducers;

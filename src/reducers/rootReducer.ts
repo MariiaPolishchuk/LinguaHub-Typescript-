@@ -1,19 +1,11 @@
-// rootReducer.ts
-const initialState = {
-  counter: 0
-};
+import { combineReducers } from "redux";
 
-const rootReducer = (state = initialState, action: { type: any; }) => {
-  switch (action.type) {
-    case 'INCREMENT_COUNTER':
-      return {
-        ...state,
-        counter: state.counter + 1
-      };
-    default:
-      return state;
-  }
-};
+const rootReducer = combineReducers({
+  // Временный редьюсер без каких-либо данных
+  placeholder: (state = null) => state,
+});
 
 export default rootReducer;
+
+
 

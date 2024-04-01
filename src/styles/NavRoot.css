@@ -1,6 +1,7 @@
 .nav-bar-root a {
     font-size: small;
-    color: #3a5961;
+    color: #000000a8;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .nav-bar-root  {
