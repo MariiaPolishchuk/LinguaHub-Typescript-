@@ -7,7 +7,7 @@ import Grid from "@mui/material/Grid";
 import "../../../styles/AdminBorder.css";
 import SidePanel from "./Sidebar";
 import LessonList from "./LessonList";
-import EditLessonsPage from "./EditLessonsPage";
+import EditLessonsPage from "../CMS-pages/EditLessonsPage";
 
 interface AdminPanelProps {
     levels: string[];

@@ -8,7 +8,8 @@ import "../../../styles/AdminBorder.css";
 
 const Sidebar: React.FC = () => {
   return (
-    <Drawer className="cms-sidebar"
+    <Drawer
+      className="cms-sidebar"
       variant="permanent"
       sx={{
         width: 240,
@@ -20,10 +21,20 @@ const Sidebar: React.FC = () => {
       }}
     >
       <List>
-      <ListItem button component={Link} to="/">
+        {/* <ListItem button component={Link} to="/">
           <ListItemText className="back-link" primary="< Home Page" />
+        </ListItem> */}
+        <ListItem className="logo-cms" button component={Link} to="/">
+          <img
+            className="logo-icon"
+            src="src/assets/images/IMG_9127.png"
+          />
         </ListItem>
-        
+
+        <ListItem button component={Link} to="/admin-panel">
+          <ListItemText primary="Add New Lesson" />
+        </ListItem>
+
         <ListItem button component={Link} to="/admin-panel/my-lessons">
           <ListItemText primary="My Lessons" />
         </ListItem>

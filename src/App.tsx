@@ -6,9 +6,10 @@ import Home from "./Components/Home-page/Home";
 import Footer from "./Components/Footer/Footer";
 import CourseLevels from "./Components/LessonsComponents/CourseLevels/CourseLevels";
 import "./App.css";
-import EditLessonsPage from "./Components/CMS/AdminPanel/EditLessonsPage";
+import EditLessonsPage from "./Components/CMS/CMS-pages/EditLessonsPage";
 import AdminPanel from "./Components/CMS/AdminPanel/AdminPanel";
 import store from "./store";
+import LessonList from "./Components/CMS/AdminPanel/LessonList";
 
 function App() {
   const location = useLocation();
@@ -30,6 +31,10 @@ function App() {
           <Route
             path="/admin-panel/edit"
             element={<EditLessonsPage lessons={[]} />}
+          />
+          <Route
+            path="/admin-panel/my-lessons"
+            element= {<LessonList lessons={[]} />} 
           />
         </Routes>
         <Footer />

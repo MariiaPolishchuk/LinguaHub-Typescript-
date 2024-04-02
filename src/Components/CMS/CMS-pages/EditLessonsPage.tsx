@@ -1,8 +1,8 @@
 import React from "react";
-import LessonList from "./LessonList";
+import LessonList from "../AdminPanel/LessonList";
 import { Lesson } from "../types";
 import "../../../styles/AdminBorder.css";
-import SidePanel from "./Sidebar";
+import SidePanel from "../AdminPanel/Sidebar";
 import { Grid } from "@mui/material";
 
 interface EditLessonsPageProps {
