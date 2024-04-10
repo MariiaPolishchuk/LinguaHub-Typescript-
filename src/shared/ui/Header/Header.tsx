@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import "../../styles/Header.css";
+import "../../../styles/Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
   faSignOutAlt,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import LoginButton from "../../features/auth/LoginButton";
+import LoginButton from "../../../features/auth/LoginButton";
 import { useAuth0 } from "@auth0/auth0-react";
 
 interface User {
