@@ -15,7 +15,7 @@ const Test: React.FC = () => {
 
   const goToPage = (pageNumber: number) => {
     setCurrentPage(pageNumber);
-    let path = `/course/intermediate/my-fascinating-morning/lesson/test/${pageNumber}`;
+    const path = `/course/intermediate/my-fascinating-morning/lesson/test/${pageNumber}`;
     navigate(path);
   };
 

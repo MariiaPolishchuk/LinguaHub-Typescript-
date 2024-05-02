@@ -1,6 +1,6 @@
 // Advanced.jsx
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes } from 'react-router-dom';
 // import AdvancedTopic1 from './AdvancedTopic1';
 // import AdvancedTopic2 from './AdvancedTopic2';
 

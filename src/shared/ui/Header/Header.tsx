@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
-import "../../styles/Header.css";
+import "../../../styles/Header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
   faSignOutAlt,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import LoginButton from "../../features/auth/LoginButton";
+import LoginButton from "../../../features/auth/LoginButton";
 import { useAuth0 } from "@auth0/auth0-react";
 
 interface User {
@@ -50,10 +50,11 @@ const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        userMenuRef.current &&
-        !userMenuRef.current.contains(event.target as Node)
+        isContentOpen &&
+        !((event.target as HTMLElement).closest(".content-li")) &&
+        !((event.target as HTMLElement).closest(".header-choose-levels"))
       ) {
-        setIsUserMenuOpen(false);
+        setIsContentOpen(false);
       }
     };
 
@@ -62,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ user, onLogout }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [isContentOpen]);
 
   const handleBurgerClick = () => {
     setIsBurgerOpen(!isBurgerOpen);

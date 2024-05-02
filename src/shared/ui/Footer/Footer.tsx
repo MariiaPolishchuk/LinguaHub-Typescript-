@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/Footer.css";
+import "../../../styles/Footer.css";
 
 const Footer: React.FC = () => {
   return (
@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
               alt="inst"
             />
           </a>
-          <a href="/" className="footer-contacts-social">
+          <a href="https://www.instagram.com/lingua_hub_?igsh=MXZodG8wNnN6cnF5&utm_source=qr" className="footer-contacts-social">
             <img
               className="footer-img"
               src="/src/assets/images/instta.png"

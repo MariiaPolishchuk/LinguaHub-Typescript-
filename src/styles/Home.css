@@ -20,6 +20,15 @@
   opacity: 1;
 }
 
+.carousel-lessons {
+  position: absolute;
+  left: 20%;
+  top: 40%;
+  z-index: 999;
+  text-shadow: 0 0 20px #fff !important;
+  color: #090909e3;
+}
+
 .img-container {
   position: relative;
   width: 100%;
@@ -137,7 +146,7 @@
   .carousel-lessons {
     position: absolute;
     left: 20px;
-    font-size: xx-large;
+    font-size: small;
     text-shadow: 0 0 4px #020a0c;
     color: #dde2e4;
     top: 0%;

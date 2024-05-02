@@ -1,8 +1,4 @@
-// sentencesData.ts
-
 import { Sentence } from './types';
-
-// Этот файл содержит исходные данные для предложений
 export const sentencesData: Sentence[] = [
   {
     id: "sentence1",

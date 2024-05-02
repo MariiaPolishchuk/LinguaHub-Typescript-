@@ -1,5 +1,5 @@
-import React from 'react';
 import { Button } from '@material-ui/core';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CourseButtons = () => {
