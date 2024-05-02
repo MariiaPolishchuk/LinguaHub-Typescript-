@@ -8,21 +8,21 @@ const Footer: React.FC = () => {
       <div className="footer-contacts">
         <img className="logo-icon" src="/assets/images/LINGUAHUB.PNG" alt="" />
         <p className="footer-contacts-info-contact">
-          <a href="/" className="footer-contacts-social">
+          <a href="/public" className="footer-contacts-social">
             <img
               className="footer-img"
               src="/src/assets/images/faceb.png"
               alt="face"
             />
           </a>
-          <a href="/" className="footer-contacts-social">
+          <a href="/public" className="footer-contacts-social">
             <img
               className="footer-img"
               src="/src/assets/images/telegr.png"
               alt="inst"
             />
           </a>
-          <a href="https://www.instagram.com/lingua_hub_?igsh=MXZodG8wNnN6cnF5&utm_source=qr" className="footer-contacts-social">
+          <a href="/" className="footer-contacts-social">
             <img
               className="footer-img"
               src="/src/assets/images/instta.png"
