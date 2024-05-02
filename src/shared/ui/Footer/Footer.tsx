@@ -30,7 +30,7 @@ const Footer: React.FC = () => {
             />
           </a>
         </p>
-        <p className="footer-company">© 2024 LinguaHub</p>
+        <p className="footer-company">©2024 LinguaHub</p>
       </div>
     </footer>
   );
