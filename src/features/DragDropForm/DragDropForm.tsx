@@ -79,6 +79,7 @@ const DragDropForm: React.FC<DragDropFormProps> = ({
         : userAnswers[sourceIndex]?.text;
 
     if (source.droppableId !== destination.droppableId) {
+      // Проверяем, было ли слово перемещено из пропуска в контейнер слов
       if (source.droppableId === "word-list") {
         const newAvailableWords = [...availableWords];
         newAvailableWords.splice(source.index, 1);
@@ -97,7 +98,8 @@ const DragDropForm: React.FC<DragDropFormProps> = ({
         setAvailableWords(newAvailableWords);
       } else {
         const oldWord = userAnswers[destinationIndex]?.text;
-        if (oldWord) {
+        // Добавляем обратно в контейнер слов, если слово было перемещено в другой пропуск
+        if (oldWord && oldWord !== word) {
           setAvailableWords((prevWords) => [...prevWords, oldWord]);
         }
         updateUserAnswer(destinationIndex, word);

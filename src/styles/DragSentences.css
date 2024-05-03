@@ -34,6 +34,7 @@
     flex-direction: column;
     gap: 10px;
     padding: 5px;
+    text-shadow: 2px 2px 2px #08364352;
   }
   
   .drag-word {
