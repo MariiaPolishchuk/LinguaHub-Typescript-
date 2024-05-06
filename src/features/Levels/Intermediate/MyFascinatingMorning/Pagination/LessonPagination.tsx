@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
-import PaginationItem from "../../../../../Components/LessonsComponents/Pagination/PaginationItem"
+import PaginationItem from "../../../../../shared/ui/Pagination/PaginationItem"
 import { getPageRoute } from "./utils";
 import "../../../../../styles/Pagination.css";
 

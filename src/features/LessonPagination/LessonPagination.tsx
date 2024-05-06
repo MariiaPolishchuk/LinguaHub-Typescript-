@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PaginationItem from "../../Components/LessonsComponents/Pagination/PaginationItem";
+import PaginationItem from "../../shared/ui/Pagination/PaginationItem";
 
 interface LessonPaginationProps {
   currentPage: number;

@@ -2,27 +2,11 @@ import React, { useState, useEffect } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import Button from "@mui/material/Button";
 import "../../styles/DragSentences.css";
-
-interface Sentence {
-  id: string;
-  text: string;
-  correctWords: string[];
-}
-
-interface WordsGame {
-  sentences: Sentence[];
-  words: string[];
-}
-
-interface UserAnswer {
-  text: string;
-  correct: boolean | null;
-}
-
-interface DragDropFormProps extends WordsGame {
-  onWordMove: (word: string) => void;
-  resetGame: () => void;
-}
+import {
+  DragDropFormProps,
+  UserAnswer,
+  Sentence,
+} from "./DragDropFormModels";
 
 const DragDropForm: React.FC<DragDropFormProps> = ({
   sentences,
@@ -35,21 +19,13 @@ const DragDropForm: React.FC<DragDropFormProps> = ({
   );
   const [checked, setChecked] = useState(false);
   const [availableWords, setAvailableWords] = useState<string[]>([]);
-  const [initialAvailableWords, setInitialAvailableWords] = useState<string[]>(
-    []
-  );
+
   const [activeBlank, setActiveBlank] = useState<number | null>(null);
 
   useEffect(() => {
     const shuffledWords = shuffleArray(words);
     setAvailableWords(shuffledWords);
-    setInitialAvailableWords(shuffledWords);
   }, []);
-
-  useEffect(() => {
-    const shuffledWords = shuffleArray(words);
-    setInitialAvailableWords(shuffledWords);
-  }, [words]);
 
   const updateUserAnswer = (index: number, word: string) => {
     setUserAnswers((prevAnswers) => {
@@ -182,11 +158,7 @@ const DragDropForm: React.FC<DragDropFormProps> = ({
     setActiveBlank(null);
   };
 
-  const renderBlank = (
-    sentenceIndex: number,
-    blankIndex: number,
-    blankContent: string
-  ) => (
+  const renderBlank = (sentenceIndex: number, blankIndex: number) => (
     <Droppable
       key={`sentence${sentenceIndex + 1}-blank${blankIndex}`}
       droppableId={`sentence${sentenceIndex + 1}-blank${blankIndex}`}
@@ -252,7 +224,7 @@ const DragDropForm: React.FC<DragDropFormProps> = ({
           {sentence.text.split(/______/).map((part, i, partsArray) => (
             <React.Fragment key={i}>
               <span>{part}</span>
-              {i !== partsArray.length - 1 && renderBlank(index, i, part)}
+              {i !== partsArray.length - 1 && renderBlank(index, i)}
             </React.Fragment>
           ))}
           {provided.placeholder}

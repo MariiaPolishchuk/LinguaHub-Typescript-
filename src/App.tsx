@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { Provider } from "react-redux";
 import Header from "./shared/ui/Header/Header";
-import Home from "./Components/Home-page/Home";
+import Home from "./features/HomePage/HomePage";
 import Footer from "./shared/ui/Footer/Footer";
 import CourseLevels from "./Components/LessonsComponents/CourseLevels/CourseLevels";
 import "./App.css";
