@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import ExperienceColumn from "./ExperienceColumn";
-import MyCarousel from "./MyCarousel";
+import MyCarousel from "../../shared/ui/LessonsSlider/LessonsSlider";
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
+import { carouselItems } from "../../shared/ui/LessonsSlider/lessonsSliderData"
 import "../../styles/Home.css";
 
 const Home: React.FC = () => {
@@ -44,7 +45,7 @@ const Home: React.FC = () => {
           <ExperienceColumn />
         </div>
       </div>
-      <MyCarousel />
+      <MyCarousel items={carouselItems} />
     </div>
   );
 };

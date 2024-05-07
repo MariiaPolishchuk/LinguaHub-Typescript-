@@ -10,6 +10,8 @@ import Layout from "./Tabs/Tabs";
 import SynonymsPage from "./SynonymsPage/SynonymsPage";
 import VocabularyPracticePage from "./VocabularyPracticePage";
 import Button from "@mui/material/Button";
+import Video from "../../../Video/Video";
+import { videoData } from "./CoffeeHistory/videoData";
 
 const MyFascinatingMorning: React.FC = () => {
   const navigate = useNavigate();
@@ -78,6 +80,11 @@ const MyFascinatingMorning: React.FC = () => {
               ></Route>
               <Route path="/lesson/grammar" element={<Grammar />} />
               <Route path="/lesson/listening" element={<Listening />} />
+
+              <Route
+                path="/lesson/listening/video"
+                element={<Video lesson={videoData[0]} />}
+              />
             </Routes>
           </Layout>
         </>

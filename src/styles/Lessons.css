@@ -26,6 +26,7 @@ p .main-container-lessons {
 
 .block {
   padding: 0 70px;
+  margin-bottom: 40px;
 }
 .start-lesson {
   display: flex;

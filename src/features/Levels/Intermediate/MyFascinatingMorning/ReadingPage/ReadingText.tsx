@@ -14,10 +14,6 @@ const ReadingText = () => {
       </h4>
 
       <div className="reading">
-        {/* <h4>
-        Task. Read the text carefully, pay attention to the highlighted words.
-        Tick the button to answer the questions.
-      </h4> */}
         <div className="read">
           <h3 className="theme-start">
             The Enchanting World of Morning Rituals
