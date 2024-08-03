@@ -4,6 +4,7 @@ export interface CMSProps {
 }
 
 export interface Lesson {
+  _id: Key | null | undefined;
   id: string;
   level: string;
   title: string;

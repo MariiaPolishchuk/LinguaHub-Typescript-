@@ -8,8 +8,11 @@ app.use(express.json());
 app.use('/api', lessonRoutes);
 app.use('/api', assignmentRoutes);
 
-const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI || 'your_mongo_db_connection_string';
+const PORT = process.env.PORT || 3000; // или другой доступный порт
+
+
+const MONGO_URI = 'mongodb://localhost:27017/your_database_name';
+
 
 mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {

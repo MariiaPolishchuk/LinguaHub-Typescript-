@@ -139,8 +139,9 @@ const CMSForm: React.FC<CMSFormProps> = ({
             level: level,
             title: lessonTitle,
             image: selectedImage,
-            id: "", 
-            description: ""
+            id: "",
+            description: "",
+            _id: undefined
         };
 
         onAddLesson(newLesson, level);

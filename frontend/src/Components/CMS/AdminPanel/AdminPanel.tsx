@@ -1,3 +1,73 @@
+// import React, { useState, useEffect } from "react";
+// import CMSForm from "../CMSForm";
+// import { Lesson } from "../types";
+// import Modal from "./Modal";
+// import { Route, Routes } from "react-router-dom"; 
+// import Grid from "@mui/material/Grid";
+// import "../../../styles/AdminBorder.css";
+// import SidePanel from "./Sidebar";
+// import LessonList from "./LessonList";
+// import EditLessonsPage from "../CMS-pages/EditLessonsPage";
+
+// interface AdminPanelProps {
+//     levels: string[];
+// }
+
+// const AdminPanel: React.FC<AdminPanelProps> = ({ levels }) => {
+//     const [imageList, setImageList] = useState<string[]>([]);
+//     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+//     const [lessons, setLessons] = useState<Lesson[]>([]);
+
+
+//     useEffect(() => {
+//         const fetchedImageList = [
+//             "/src/assets/images/Intermediate/b11.png",
+//             "/src/assets/images/Intermediate/my-fascinating-morning.png",
+//             "/src/assets/images/Intermediate/job-int.png",
+//         ];
+//         setImageList(fetchedImageList);
+//     }, []);
+
+//     const handleAddLesson = (lesson: Lesson) => {
+//         setLessons([...lessons, lesson]);
+//     };
+
+
+//     return (
+//         <div className="admin-border">
+//             <Grid container spacing={3}>
+//                 <Grid item xs={2}>
+//                     <SidePanel />
+//                 </Grid>
+//                 <Grid item xs={10}>
+//                     <div className="add-lesson">
+//                         <CMSForm
+//                             levels={levels}
+//                             imageList={imageList}
+//                             onAddLesson={handleAddLesson}
+//                         />
+//                         <Modal
+//                             imageList={imageList}
+//                             onSelectImage={(imageUrl: string) => {}}
+//                             isOpen={isModalOpen}
+//                             closeModal={() => setIsModalOpen(false)}
+//                         />
+//                         {/* <h3>MyLessons:</h3>
+//                         <LessonList lessons={lessons} /> */}
+//                     </div>
+//                 </Grid>
+//             </Grid>
+//             <Routes>
+//               <Route path="/admin-panel/edit" element= {<EditLessonsPage lessons={lessons} />} ></Route>
+//               <Route path="/admin-panel/my-lessons" element= {<LessonList lessons={lessons} />} ></Route>
+//             </Routes>
+//         </div>
+//     );
+// };
+
+// export default AdminPanel;
+
+
 import React, { useState, useEffect } from "react";
 import CMSForm from "../CMSForm";
 import { Lesson } from "../types";
@@ -8,6 +78,7 @@ import "../../../styles/AdminBorder.css";
 import SidePanel from "./Sidebar";
 import LessonList from "./LessonList";
 import EditLessonsPage from "../CMS-pages/EditLessonsPage";
+import { getLessons } from "../../../services/api";
 
 interface AdminPanelProps {
     levels: string[];
@@ -18,8 +89,15 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ levels }) => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
     const [lessons, setLessons] = useState<Lesson[]>([]);
 
-
     useEffect(() => {
+        const fetchLessons = async () => {
+            // Fetch lessons from the API
+            const data = await getLessons(); // Используйте реальную функцию для получения уроков
+            setLessons(data);
+        };
+        
+        fetchLessons();
+        
         const fetchedImageList = [
             "/src/assets/images/Intermediate/b11.png",
             "/src/assets/images/Intermediate/my-fascinating-morning.png",
@@ -31,7 +109,6 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ levels }) => {
     const handleAddLesson = (lesson: Lesson) => {
         setLessons([...lessons, lesson]);
     };
-
 
     return (
         <div className="admin-border">
@@ -52,14 +129,12 @@ const AdminPanel: React.FC<AdminPanelProps> = ({ levels }) => {
                             isOpen={isModalOpen}
                             closeModal={() => setIsModalOpen(false)}
                         />
-                        {/* <h3>MyLessons:</h3>
-                        <LessonList lessons={lessons} /> */}
                     </div>
                 </Grid>
             </Grid>
             <Routes>
-              <Route path="/admin-panel/edit" element= {<EditLessonsPage lessons={lessons} />} ></Route>
-              <Route path="/admin-panel/my-lessons" element= {<LessonList lessons={lessons} />} ></Route>
+              <Route path="/admin-panel/edit" element= {<EditLessonsPage lessons={lessons} />} />
+              <Route path="/admin-panel/my-lessons" element= {<LessonList lessons={lessons} />} />
             </Routes>
         </div>
     );
