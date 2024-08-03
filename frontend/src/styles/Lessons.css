@@ -243,11 +243,11 @@ p .main-container-lessons {
 
 /* Содержимое модального окна */
 .modal-content {
-  background: linear-gradient(135deg, #275d6b, #d9d9d9);
+  background: linear-gradient(135deg, #275d6b, #fffcfc);
   border: 1px solid #0f333cf0;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0px 0px 9px 3px #000000a6;
+  box-shadow: 0px 0px 30px 3px #000000a6;
   padding: 20px;
   margin: 20px;
   width: 650px;
@@ -338,8 +338,6 @@ p .main-container-lessons {
   max-height: calc(100vh - 50px);
   overflow-y: auto;
   border-radius: 8px;
-  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
-    0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
 }
 
 .custom-icon {
@@ -356,7 +354,7 @@ p .main-container-lessons {
   padding: 20px 25px;
   box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
     0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
-  background-color: rgb(127, 190, 193);
+    background: #94c8cbc2;
   font-size: small;
   font-weight: 600;
   color: #fff;
@@ -698,7 +696,7 @@ p .main-container-lessons {
   }
 
   .tooltip-lesson {
-    background: #94c8cb2e;
+    background: #94c8cbc2;
     box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
       0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
     border-radius: 10px;

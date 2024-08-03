@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@material-ui/core";
-import TermList from "../../Components/LessonsComponents/TermListTooltip/TermList";
+import TermList from "../../shared/ui/TermListTooltip/TermList";
 
 interface Term {
   word: string;
@@ -36,11 +36,13 @@ const Sticker: React.FC<Props> = ({ terms }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const blocksElement = document.querySelector('.blocks');
-      const blocksTop = blocksElement ? blocksElement.getBoundingClientRect().top : 0;
+      const blocksElement = document.querySelector(".blocks");
+      const blocksTop = blocksElement
+        ? blocksElement.getBoundingClientRect().top
+        : 0;
       const windowHeight = window.innerHeight;
       const stickerHeight = windowHeight - blocksTop;
-      
+
       if (stickerHeight > 0) {
         setStickerHeight(stickerHeight);
         setIsStickerFixed(true);
@@ -49,30 +51,31 @@ const Sticker: React.FC<Props> = ({ terms }) => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <div className={`sticker-container ${isStickerFixed ? "fixed-sticker" : ""}`} style={{ maxHeight: stickerHeight }}>
-    <div className="tooltip-lesson">
-      <p>Vocabulary</p>
-      {isSmallScreen && (
-        <Button
-          className="lesson-button"
-          onClick={() => setShowTerms(!showTerms)}
-        >
-          {showTerms ? "Hide Terms" : "Show Terms"}
-        </Button>
-      )}
-      {showTerms && <TermList terms={terms} />} {/* Отображать термины, если showTerms равно true */}
+    <div
+      className={`sticker-container ${isStickerFixed ? "fixed-sticker" : ""}`}
+      style={{ maxHeight: stickerHeight }}
+    >
+      <div className="tooltip-lesson">
+        <p>Vocabulary</p>
+        {isSmallScreen && (
+          <Button
+            className="lesson-button"
+            onClick={() => setShowTerms(!showTerms)}
+          >
+            {showTerms ? "Hide Terms" : "Show Terms"}
+          </Button>
+        )}
+        {showTerms && <TermList terms={terms} />}
+      </div>
     </div>
-  </div>
-  
-  
   );
 };
 

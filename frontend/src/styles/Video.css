@@ -8,14 +8,24 @@
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
+  box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2),
+    0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 30px;
+  padding: 45px;
+  background-color: #f0f0f0;
+}
+
+.tooltip-video-terms {
+    text-shadow: 2px 2px 2px rgba(145, 140, 140, 0.675) !important;
+    color: #129fa1;
 }
 
 .modal-header h2 {
   margin: 10px 0;
-  color: #b6bdc1;
+  color: #ffffff;
   font-weight: 500;
   font-size: 1.7em !important;
-  text-shadow: 2px 2px 2px rgb(15, 15, 15) !important;
+  text-shadow: 2px 1px 2px rgb(15, 15, 15) !important;
   cursor: text;
   text-align: center;
 }
@@ -34,6 +44,7 @@
   box-shadow: none;
   background: none;
   font-size: x-large;
+  color: black;
 }
 .coffee-questions {
   display: flex;
@@ -91,7 +102,7 @@
   background-position: left;
   background-size: contain;
   background-repeat: no-repeat;
-  min-height: calc(70vh - 64px);
+  min-height: calc(60vh - 64px);
   /* background-color: rgb(127 190 193 / 39%); */
 }
 
@@ -172,11 +183,17 @@
     width: 100%;
   }
 
+  .video-block {
+    padding: 10px !important;
+    margin:  0;
+  }
+
   .video {
     width: 100%;
   }
   .video-info {
     align-items: stretch;
+    width: 100%;
   }
   .start-test {
     width: 100%;
@@ -187,15 +204,16 @@
     align-items: center;
     justify-content: flex-start;
     margin: 0 !important;
+    background-color: unset;
+    box-shadow: none;
+    background-position: top;
   }
 
   .coffee-questions {
     font-size: small;
   }
 
-  .tooltip {
-    font-size: small;
-  }
+
 
   .video-tooltips-task {
     gap: 0;

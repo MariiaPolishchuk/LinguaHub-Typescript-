@@ -29,7 +29,7 @@ const Video: React.FC<VideoProps> = ({ lesson }) => {
   };
 
   return (
-    <div className="video-block">
+    <div className="video-block fade-in">
       <div className="block-name">
         <h3 className="video-block-name">{lesson.title}</h3>
         <h4>{lesson.description}</h4>
@@ -39,7 +39,7 @@ const Video: React.FC<VideoProps> = ({ lesson }) => {
         <div className="video-info">
           <VideoText text={lesson.text} tooltips={lesson.tooltips} />
 
-          <div className="video-container block">
+          <div className="video-container">
             <div className="video">
               <iframe
                 width="560"
@@ -68,7 +68,7 @@ const Video: React.FC<VideoProps> = ({ lesson }) => {
         <div className="modal-container fade-in-fast">
           <div className="modal-content">
             <div className="modal-header">
-              <h2>Coffee History</h2>
+              <h2>Speaking Task:</h2>
             </div>
             <div className="modal-body">
               <p className="random-questions text fade-in-fast">

@@ -131,6 +131,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px 0;
+  white-space: nowrap;
 }
 
 .lesson-button {
@@ -173,6 +174,10 @@ body {
 
 .thumbs-wrapper {
   margin: 0 !important;
+}
+
+.carousel {
+  margin-top: 40px;
 }
 
 .carousel-container {
@@ -251,12 +256,12 @@ h4 {
   }
   .carousel-lessons {
     position: absolute;
-    left: 20px;
+    left: 2%;
     text-shadow: 0 0 4px #020a0c;
     color: #dde2e4;
     top: 0%;
     z-index: 999;
-    font-size: xx-large;
+
   }
 
   .levels {
